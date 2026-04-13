@@ -1,0 +1,1713 @@
+[
+  {
+    "company": "BankCherokee",
+    "website": "bankcherokee.com",
+    "industry": "Banking - Community Bank",
+    "hq": "St. Paul, MN",
+    "size": "85",
+    "revenue": "$20M-$30M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Andy Gesell",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Family-owned community bank",
+      "85 employees unlikely to have large IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Family-owned community bank; 85 employees unlikely to have large IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 4 | Main phone: (651) 227-7071"
+  },
+  {
+    "company": "21st Century Bank",
+    "website": "21stcb.com",
+    "industry": "Banking - Community Bank",
+    "hq": "Blaine, MN",
+    "size": "65",
+    "revenue": "$23.2M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Thomas Dolphin",
+        "title": "CEO/Chairman of the Board",
+        "linkedin": "https://www.linkedin.com/in/thomas-dolphin-369b97287/",
+        "email": ""
+      },
+      {
+        "name": "Jonathan Dolphin",
+        "title": "President",
+        "linkedin": "https://www.linkedin.com/in/jonathan-dolphin/",
+        "email": ""
+      },
+      {
+        "name": "Michael Gallagher",
+        "title": "Senior Vice President, Head of Business Development & Business Banking",
+        "linkedin": "https://www.linkedin.com/in/michaelgallagher62/",
+        "email": ""
+      }
+    ],
+    "pain_signals": [
+      "Family-owned community bank with very small IT department",
+      "Manual banking processes still used (City of Blaine case study mentions manual fund transfers prior to automation implementation)",
+      "Recently expanded to new locations (Eagan branch opened November 2025, Rogers Community Center naming 2023)",
+      "Likely needs operational automation for multiple locations and cash management",
+      "Asset growth requires scaling infrastructure ($880M in assets, top SBA lender in Minnesota)"
+    ],
+    "score": "WARM",
+    "score_reasoning": "[Auto-updated by signal synthesis] 21st Century Bank has 6 signals detected (6 in the last 14 days). Moderate buying indicators in growth, leadership, pain. The strongest signal is: \"Leadership structure shifted: Jon Dolphin now listed as CEO, Troy Noseworthy as President (as of April 2025 per Highperformr). Potential executive reorganization signal for operations review and capability audit.\" Good timing for exploratory outreach.",
+    "status": "researched",
+    "last_action": "Deep research completed 2026-03-19",
+    "next_action": "Schedule discovery call with Jonathan Dolphin (President) to discuss operational automation challenges across 8 locations",
+    "next_action_date": "2026-03-27",
+    "product_config": "ais-mn",
+    "notes": "Locations: 8 (Minneapolis Riverplace, Blaine 93rd/Central, Ham Lake, Loretto, Rogers, Roseville, Eagan, Lilydale). Main phone: (763) 792-3200. Assets: $880M+. Family-owned since 1917. #1 MN SBA 504 TPL 2024. Leadership: Thomas P. Dolphin (CEO, 40+ yrs), Jonathan Dolphin (President, 25+ yrs lending), Michael Gallagher (SVP Business Development). Recently expanded to Eagan (Nov 2025) showing growth trajectory. Blog posts on AI adoption suggest tech-forward thinking. Remote deposit capture and automated cash management solutions already implemented for municipal clients indicate operations mindset.",
+    "signals": [
+      {
+        "type": "expansion",
+        "description": "Relocated operations from Lilydale to new full-service branch in Eagan, Minnesota in November 2025. Indicates multi-location operational complexity and infrastructure modernization efforts.",
+        "source": "21st Century Bank About Us page",
+        "source_url": "https://21stcb.com/about-us/",
+        "detected_at": "2026-03-19",
+        "strength": 0.7,
+        "category": "growth_signal",
+        "decay_rate": "medium"
+      },
+      {
+        "type": "hiring",
+        "description": "Multiple active job postings for Bank Teller/Account Services Representatives at Eagan and Ham Lake locations with $1,000 hiring bonuses. Evidence of operational staffing needs following branch expansion.",
+        "source": "21st Century Bank careers page and job boards (Ladders, ZipRecruiter)",
+        "source_url": "https://21stcb.com/banking-careers/",
+        "detected_at": "2026-03-19",
+        "strength": 0.6,
+        "category": "engagement_signal",
+        "decay_rate": "fast"
+      },
+      {
+        "type": "pain_indicator",
+        "description": "Indeed employee reviews cite outdated operational approach: 'management team operates still like a 1970's bank' with bottlenecks requiring President approval for day-to-day enhancements. Indicates organizational inefficiency and modernization pressure.",
+        "source": "Indeed company reviews",
+        "source_url": "https://www.indeed.com/cmp/21st-Century-Bank",
+        "detected_at": "2026-03-19",
+        "strength": 0.65,
+        "category": "pain_indicator",
+        "decay_rate": "slow"
+      },
+      {
+        "type": "leadership_change",
+        "description": "Leadership structure shifted: Jon Dolphin now listed as CEO, Troy Noseworthy as President (as of April 2025 per Highperformr). Potential executive reorganization signal for operations review and capability audit.",
+        "source": "Highperformr company leadership data",
+        "source_url": "https://www.highperformr.ai/company/21st-century-bank",
+        "detected_at": "2026-03-19",
+        "strength": 0.65,
+        "category": "leadership_change",
+        "decay_rate": "medium"
+      },
+      {
+        "type": "tech_adoption",
+        "description": "Bank actively promoting 'electronic banking, cash management and credit card services' and describes offering 'modern banking services.' Recent website updates emphasize digital banking capabilities, suggesting modernization initiatives.",
+        "source": "21st Century Bank website homepage",
+        "source_url": "https://21stcb.com/",
+        "detected_at": "2026-03-19",
+        "strength": 0.5,
+        "category": "tech_stack_change",
+        "decay_rate": "medium"
+      },
+      {
+        "type": "news",
+        "description": "Bank continues rapid growth trajectory: assets now $880M+ (up from $700M+); ranked #1 MN SBA 504 Third Party Lender 2024; top SBA performer. Growth at this scale requires operational complexity management and infrastructure scaling.",
+        "source": "21st Century Bank About Us and Twin Cities Business Magazine",
+        "source_url": "https://21stcb.com/about-us/",
+        "detected_at": "2026-03-19",
+        "strength": 0.6,
+        "category": "growth_signal",
+        "decay_rate": "slow"
+      }
+    ],
+    "last_signal_scan": "2026-03-19",
+    "signal_score": 55,
+    "signal_synthesis": {
+      "computedScore": 55,
+      "recommendedRating": "WARM",
+      "contributions": [
+        {
+          "signal": {
+            "type": "leadership_change",
+            "description": "Leadership structure shifted: Jon Dolphin now listed as CEO, Troy Noseworthy as President (as of April 2025 per Highperformr). Potential executive reorganization signal for operations review and capability audit.",
+            "source": "Highperformr company leadership data",
+            "source_url": "https://www.highperformr.ai/company/21st-century-bank",
+            "detected_at": "2026-03-19",
+            "strength": 0.65,
+            "category": "leadership_change",
+            "decay_rate": "medium"
+          },
+          "decayedStrength": 0.65,
+          "categoryWeight": 1.3,
+          "contribution": 0.845
+        },
+        {
+          "signal": {
+            "type": "pain_indicator",
+            "description": "Indeed employee reviews cite outdated operational approach: 'management team operates still like a 1970's bank' with bottlenecks requiring President approval for day-to-day enhancements. Indicates organizational inefficiency and modernization pressure.",
+            "source": "Indeed company reviews",
+            "source_url": "https://www.indeed.com/cmp/21st-Century-Bank",
+            "detected_at": "2026-03-19",
+            "strength": 0.65,
+            "category": "pain_indicator",
+            "decay_rate": "slow"
+          },
+          "decayedStrength": 0.65,
+          "categoryWeight": 1.1,
+          "contribution": 0.715
+        },
+        {
+          "signal": {
+            "type": "expansion",
+            "description": "Relocated operations from Lilydale to new full-service branch in Eagan, Minnesota in November 2025. Indicates multi-location operational complexity and infrastructure modernization efforts.",
+            "source": "21st Century Bank About Us page",
+            "source_url": "https://21stcb.com/about-us/",
+            "detected_at": "2026-03-19",
+            "strength": 0.7,
+            "category": "growth_signal",
+            "decay_rate": "medium"
+          },
+          "decayedStrength": 0.7,
+          "categoryWeight": 1,
+          "contribution": 0.7
+        },
+        {
+          "signal": {
+            "type": "tech_adoption",
+            "description": "Bank actively promoting 'electronic banking, cash management and credit card services' and describes offering 'modern banking services.' Recent website updates emphasize digital banking capabilities, suggesting modernization initiatives.",
+            "source": "21st Century Bank website homepage",
+            "source_url": "https://21stcb.com/",
+            "detected_at": "2026-03-19",
+            "strength": 0.5,
+            "category": "tech_stack_change",
+            "decay_rate": "medium"
+          },
+          "decayedStrength": 0.5,
+          "categoryWeight": 1.2,
+          "contribution": 0.6
+        },
+        {
+          "signal": {
+            "type": "news",
+            "description": "Bank continues rapid growth trajectory: assets now $880M+ (up from $700M+); ranked #1 MN SBA 504 Third Party Lender 2024; top SBA performer. Growth at this scale requires operational complexity management and infrastructure scaling.",
+            "source": "21st Century Bank About Us and Twin Cities Business Magazine",
+            "source_url": "https://21stcb.com/about-us/",
+            "detected_at": "2026-03-19",
+            "strength": 0.6,
+            "category": "growth_signal",
+            "decay_rate": "slow"
+          },
+          "decayedStrength": 0.6,
+          "categoryWeight": 1,
+          "contribution": 0.6
+        },
+        {
+          "signal": {
+            "type": "hiring",
+            "description": "Multiple active job postings for Bank Teller/Account Services Representatives at Eagan and Ham Lake locations with $1,000 hiring bonuses. Evidence of operational staffing needs following branch expansion.",
+            "source": "21st Century Bank careers page and job boards (Ladders, ZipRecruiter)",
+            "source_url": "https://21stcb.com/banking-careers/",
+            "detected_at": "2026-03-19",
+            "strength": 0.6,
+            "category": "engagement_signal",
+            "decay_rate": "fast"
+          },
+          "decayedStrength": 0.6,
+          "categoryWeight": 0.9,
+          "contribution": 0.54
+        }
+      ],
+      "categoryBreakdown": [
+        {
+          "category": "growth_signal",
+          "signalCount": 2,
+          "totalContribution": 1.3,
+          "topSignal": "Relocated operations from Lilydale to new full-service branch in Eagan, Minnesota in November 2025. Indicates multi-location operational complexity and infrastructure modernization efforts."
+        },
+        {
+          "category": "leadership_change",
+          "signalCount": 1,
+          "totalContribution": 0.845,
+          "topSignal": "Leadership structure shifted: Jon Dolphin now listed as CEO, Troy Noseworthy as President (as of April 2025 per Highperformr). Potential executive reorganization signal for operations review and capability audit."
+        },
+        {
+          "category": "pain_indicator",
+          "signalCount": 1,
+          "totalContribution": 0.715,
+          "topSignal": "Indeed employee reviews cite outdated operational approach: 'management team operates still like a 1970's bank' with bottlenecks requiring President approval for day-to-day enhancements. Indicates organizational inefficiency and modernization pressure."
+        },
+        {
+          "category": "tech_stack_change",
+          "signalCount": 1,
+          "totalContribution": 0.6,
+          "topSignal": "Bank actively promoting 'electronic banking, cash management and credit card services' and describes offering 'modern banking services.' Recent website updates emphasize digital banking capabilities, suggesting modernization initiatives."
+        },
+        {
+          "category": "engagement_signal",
+          "signalCount": 1,
+          "totalContribution": 0.54,
+          "topSignal": "Multiple active job postings for Bank Teller/Account Services Representatives at Eagan and Ham Lake locations with $1,000 hiring bonuses. Evidence of operational staffing needs following branch expansion."
+        }
+      ],
+      "summary": "21st Century Bank has 6 signals detected (6 in the last 14 days). Moderate buying indicators in growth, leadership, pain. The strongest signal is: \"Leadership structure shifted: Jon Dolphin now listed as CEO, Troy Noseworthy as President (as of April 2025 per Highperformr). Potential executive reorganization signal for operations review and capability audit.\" Good timing for exploratory outreach.",
+      "recommendations": [
+        "21st Century Bank shows moderate signals. Monitor before committing outreach resources.",
+        "Run another signal scan in 2 weeks to see if signals strengthen or decay.",
+        "Leadership change detected. New leaders often audit and rebuild the stack within 90 days."
+      ],
+      "synthesizedAt": "2026-03-19"
+    },
+    "score_history": [
+      {
+        "date": "2026-03-19",
+        "from": "HOT",
+        "to": "WARM",
+        "reason": "Signal synthesis: 21st Century Bank has 6 signals detected (6 in the last 14 days). Moderate buying indicators in growth, leadership, pain. The strongest signal is: \"Leadership structure shifted: Jon Dolphin now listed",
+        "signalScore": 55
+      }
+    ]
+  },
+  {
+    "company": "North American Banking Company",
+    "website": "https://www.nabankco.com",
+    "industry": "Banking - Community Bank",
+    "hq": "Roseville, MN",
+    "size": "95 employees (as of September 2025)",
+    "revenue": "$1.2B-$1.4B in total assets (Q1 2025: $1,368,790,000)",
+    "crm": "Apiture Digital Banking Platform",
+    "contacts": [
+      {
+        "name": "Michael Bilski",
+        "title": "CEO/Chairman",
+        "linkedin": "https://www.linkedin.com/in/michael-bilski-8a408a6/",
+        "email": "mbilski@nabankco.com"
+      },
+      {
+        "name": "Brad Huckle",
+        "title": "President and Chief Lending Officer",
+        "linkedin": "https://www.linkedin.com/in/bradley-huckle-3400a86a/",
+        "email": "bhuckle@nabankco.com"
+      },
+      {
+        "name": "Katie Stockman",
+        "title": "Chief Financial Officer",
+        "linkedin": "",
+        "email": "kstockman@nabankco.com"
+      },
+      {
+        "name": "Greg Gunderson",
+        "title": "Vice President, Compliance and Human Resources",
+        "linkedin": "",
+        "email": "ggunderson@nabankco.com"
+      },
+      {
+        "name": "Dan Ley",
+        "title": "Assistant Vice President, Information Technology",
+        "linkedin": "",
+        "email": "dley@nabankco.com"
+      },
+      {
+        "name": "Alex Bilski",
+        "title": "Assistant Vice President, Payments & Technology (CCCP)",
+        "linkedin": "",
+        "email": "abilski@nabankco.com"
+      },
+      {
+        "name": "Nora Lovaas",
+        "title": "Assistant Vice President, Payments & Technology (AAP, NCP)",
+        "linkedin": "",
+        "email": "nlovaas@nabankco.com"
+      },
+      {
+        "name": "Justin Adducci",
+        "title": "Assistant Vice President, Business Banking",
+        "linkedin": "",
+        "email": "jadducci@nabankco.com"
+      },
+      {
+        "name": "Joseph Polaczyk",
+        "title": "Executive Vice President & Chief Administrative Officer",
+        "linkedin": "",
+        "email": "jpolaczyk@nabankco.com"
+      },
+      {
+        "name": "Paul Tomasofsky",
+        "title": "Senior Vice President, Merchant Payments",
+        "linkedin": "",
+        "email": "ptomasofsky@nabankco.com"
+      },
+      {
+        "name": "Ted VerLee",
+        "title": "Vice President, Business Banking",
+        "linkedin": "",
+        "email": "tverlee@nabankco.com"
+      },
+      {
+        "name": "Kelley Mickus",
+        "title": "Vice President, Retail Banking",
+        "linkedin": "https://www.linkedin.com/in/kelley-mickus-54748424/",
+        "email": ""
+      }
+    ],
+    "pain_signals": [
+      "Small IT department with Dan Ley (AVP IT) as likely single point of contact for technology and infrastructure decisions",
+      "6 locations across Twin Cities (Roseville HQ, Woodbury, Minneapolis, Hastings, Shoreview, Maple Grove) requiring unified systems management and multi-location operational complexity",
+      "Recent leadership promotions in Payments & Technology (Alex Bilski to CCCP certification, Nora Lovaas to AAP/NCP) signal expansion and capability-building initiatives",
+      "Federal Reserve member bank facing June 19, 2026 Nacha Enhanced Fraud Monitoring Rule Phase II deadline requiring risk-based ACH monitoring system enhancements",
+      "Multi-location operational complexity with expanding branch network (Maple Grove opened late 2022, continued growth signals)",
+      "High-volume payments processing (28th largest ACH ODFI nationally by transaction volume in 2024, up from 23rd in 2022) requiring advanced systems and compliance infrastructure",
+      "Active technology modernization: First Apiture client to enable real-time payments via both FedNow and RTP platforms (July 2025)",
+      "Lean staffing structure despite multi-location operations and complex payments processing requirements",
+      "Active hiring across multiple branches (Universal Banker, Loan Operations Specialist, Business Banking roles) indicating expansion/scaling pressure"
+    ],
+    "score": "WARM",
+    "score_reasoning": "North American Banking Company demonstrates moderate-to-strong buying signals across multiple dimensions. Primary strengths: (1) Multi-location operational complexity (6 branches) with lean IT department creates clear pain point for AIS solutions; (2) Recent Apiture platform investments and FedNow/RTP real-time payments expansion (July 2025) demonstrate active technology modernization and willingness to invest in operational improvements; (3) High-volume ACH ODFI operations (#28 nationally) requiring sophisticated process automation and control systems; (4) Recent leadership promotions in Payments & Technology group signal capability-building and expansion mode; (5) Federal Reserve member bank facing June 19, 2026 Nacha Phase II compliance deadline creates urgency for operations automation and monitoring system enhancements. Timing is favorable for discussing multi-location process standardization, ACH operations automation, compliance system improvements, and IT infrastructure optimization. Approach should leverage recent technology investments as proof of innovation momentum and position AIS as scalable partner to support growth without large in-house engineering team investment. Key decision-makers are relationship-driven and community-focused—emphasize local partnership and accountability.",
+    "status": "researched",
+    "last_action": "Deep research completed 2026-03-19",
+    "next_action": "Qualify Michael Bilski or Brad Huckle on multi-location operations automation and ACH compliance system opportunities. Reference recent Apiture investment, real-time payments platform expansion, and June 2026 Nacha Phase II deadline. Discuss how AIS can support scaling operations across 6 locations and ACH infrastructure modernization without requiring in-house engineering team expansion. Schedule initial call emphasizing local partnership and long-term support.",
+    "next_action_date": "2026-03-26",
+    "product_config": "ais-mn",
+    "notes": "Company Details: Founded July 21, 1998 by co-founders Michael Bilski and Brad Huckle (both formerly at Princeton Bank). Co-founders raised $4 million from ~100 shareholders (many employees) and launched bank with 10 initial employees. Currently $1.2B-$1.4B in total assets (Q1 2025: $1.37B), 95 employees as of Sept 2025, 6 locations. Privately held, Member FDIC (#34836). One of Minnesota's strongest community banks with B+ health rating. | Locations: Roseville HQ (2230 Albert St N), Woodbury, Minneapolis (4999 France Ave S Suite 120), Hastings (1620 S Frontage Rd), Shoreview (435 Highway 96 West), Maple Grove (11821 Arbor Lakes Parkway, opened late 2022). | Tech Stack: Apiture Digital Banking Platform (consumer/business banking, real-time payments via FedNow and RTP). Office 365 mentioned in tech stack. Member of Nacha, UMACHA, BankIn Minnesota (formerly ICBM), Shazam, US Faster Payments Council. | Recent Activity & Achievements: (1) First Apiture client to enable real-time payments via both FedNow Service and RTP (Clearing House) platforms simultaneously (July 2025); (2) FedNow early adopter—one of 57 certified organizations at FedNow launch (July 19, 2023); (3) RTP (Real Time Payments) participant for over 1 year prior to FedNow; (4) Michael Bilski serves as Chairman of US Faster Payments Council; (5) Paul Tomasofsky appointed to second term (2024) on Nacha's Risk Management Advisory Group (RMAG); (6) 28th largest ACH ODFI nationally by transaction volume (2024); 23rd largest in 2022; (7) CEO Michael Bilski actively speaking at Nacha Payments Innovation Alliance on Risk Assessments for Instant Payments and ACH; (8) Employee promotions signal expansion: Alex Bilski promoted to CCCP (Certified Compliance and Control Professional), Nora Lovaas to AAP/NCP, Justin Adducci to AVP Business Banking. | Pain Signals & Opportunities: (1) Multi-branch complexity: 6 locations require unified systems management, standardized processes, and branch automation potential; (2) ACH compliance urgency: June 19, 2026 Nacha Enhanced Fraud Monitoring Rule Phase II deadline approaching—requires enhanced risk-based ACH monitoring capabilities; (3) High-volume payment processing: #28 ACH ODFI nationally requires sophisticated operational infrastructure, control systems, and compliance automation; (4) Technology modernization in progress: Recent Apiture investments and real-time payments platform expansion demonstrate active modernization and willingness to invest; (5) Lean IT structure: Small IT department (Dan Ley, AVP IT) appears to be single point of contact, limiting capacity for complex infrastructure projects; (6) Growth mode: Leadership promotions, multi-branch expansion, active hiring (Universal Banker, Loan Operations Specialist roles) all signal scaling/expansion; (7) Payment processing integration: Expanding from ACH/RTP/FedNow requires ongoing system integration, operations optimization, and control enhancements. | Decision-Maker Profiles: Michael Bilski (CEO/Chairman, founder)—fourth-generation banker, 25+ years banking experience, thought leader in payments innovation (US Faster Payments Council), mission-driven on modernization and community banking; relationship-focused, prefers personal engagement with trusted partners. Brad Huckle (President/Chief Lending Officer, co-founder)—25+ years banking experience, business/relationship-driven, focuses on small business market support; accessible, collaborative decision-maker. Katie Stockman (CFO)—likely budget authority for capital infrastructure investments. Dan Ley (AVP IT)—key technical decision-maker for systems/infrastructure projects, probable liaison for automation initiatives. Paul Tomasofsky (SVP Merchant Payments) & Alex Bilski (AVP Payments & Technology)—key for ACH operations and compliance system discussions. | Differentiation Opportunities for AIS: (1) ACH compliance automation—help NABC implement enhanced risk-based ACH monitoring for June 2026 Nacha Phase II deadline; (2) Multi-branch process standardization and automation; (3) Real-time payments infrastructure support and integration optimization; (4) Building automation and facility controls across 6 locations; (5) Operational scaling partnership to support continued growth without in-house engineering team expansion; (6) Control systems integration for payments processing infrastructure. | Outreach Strategy: Lead with Nacha Phase II compliance deadline (June 19, 2026) and recent real-time payments platform expansion as hooks. Emphasize AIS's local Minnesota presence, accountability, and full-service capability (engineering + fabrication + installation + support). Position as scalable partner for growing bank managing multi-location complexity. Reference Apiture Innovator Award and FedNow/RTP adoption as proof of their innovation momentum. Suggest conversation with Michael Bilski or Brad Huckle on how to support scaling without large in-house engineering investment. | Research Notes: Michael Bilski LinkedIn profile shows active engagement on payments topics (Nacha speaking roles, FedNow updates, industry thought leadership). Brad Huckle provides direct phone/email contact on LinkedIn. Company actively participates in Minnesota banking ecosystem (Community Impact Month, Nacha memberships, SBA partnerships). Employee-owned culture and long-standing employee tenure suggest relationship-driven decision-making. No visible resistance to external partnerships or outsourced expertise.",
+    "signals": [
+      {
+        "type": "leadership_change",
+        "description": "Alex Bilski and Nora Lovaas promoted within Payments & Technology group. Alex Bilski promoted to CCCP (Certified Compliance and Control Professional); Nora Lovaas promoted to AAP, NCP. Signals expansion/reorganization of payments and tech functions, suggesting capability building and potential system modernization initiatives.",
+        "source": "LinkedIn",
+        "source_url": "https://www.linkedin.com/company/north-american-banking-company",
+        "detected_at": "2026-03-19",
+        "strength": 0.65,
+        "category": "growth_signal",
+        "decay_rate": "medium"
+      },
+      {
+        "type": "leadership_change",
+        "description": "Justin Adducci promoted to Assistant Vice President/Business Banking, indicating expansion of commercial lending and business operations capacity.",
+        "source": "LinkedIn",
+        "source_url": "https://www.linkedin.com/company/north-american-banking-company",
+        "detected_at": "2026-03-19",
+        "strength": 0.55,
+        "category": "growth_signal",
+        "decay_rate": "medium"
+      },
+      {
+        "type": "tech_adoption",
+        "description": "North American Banking Company is first Apiture client to enable real-time payments via FedNow and RTP platforms. Expanding payments innovation and real-time payment capabilities for consumers and businesses. Indicates technology modernization and regulatory compliance initiatives.",
+        "source": "CB Insights / Apiture announcement",
+        "source_url": "https://www.cbinsights.com/company/north-american-banking-company",
+        "detected_at": "2026-03-19",
+        "strength": 0.75,
+        "category": "tech_stack_change",
+        "decay_rate": "slow"
+      },
+      {
+        "type": "regulatory_compliance",
+        "description": "As Federal Reserve member bank with 6 locations and complex payments operations, NABC faces Q1 2026 Nacha Enhanced Fraud Monitoring Rule Phase II deadline (June 19, 2026) requiring risk-based ACH monitoring. This creates IT/operations automation requirements and compliance system pressures.",
+        "source": "Bottomline 2026 Banking Regulatory Outlook",
+        "source_url": "https://www.bottomline.com/resources/blog/2026-north-american-banks-regulatory-focus-threats-innovations-and-deadlines",
+        "detected_at": "2026-03-19",
+        "strength": 0.7,
+        "category": "pain_indicator",
+        "decay_rate": "fast"
+      },
+      {
+        "type": "hiring",
+        "description": "Active job postings across multiple branches (Maple Grove, Hastings, Edina, Woodbury, 50th & France Minneapolis) for Universal Banker and Loan Operations Specialist roles. Indicates expansion or high turnover requiring operational support scaling.",
+        "source": "Career pages, Indeed, Glassdoor, Minnesota Bankers Association",
+        "source_url": "https://www.nabankco.com/careers",
+        "detected_at": "2026-03-19",
+        "strength": 0.6,
+        "category": "growth_signal",
+        "decay_rate": "fast"
+      },
+      {
+        "type": "expansion",
+        "description": "Bank maintains 5-6 locations across Twin Cities (Roseville, Woodbury, Minneapolis, Hastings, Shoreview, Edina). Portfolio indicates multi-location operational complexity requiring unified systems management and branch automation.",
+        "source": "Company website, LinkedIn",
+        "source_url": "https://www.nabankco.com/",
+        "detected_at": "2026-03-19",
+        "strength": 0.5,
+        "category": "pain_indicator",
+        "decay_rate": "slow"
+      }
+    ],
+    "last_signal_scan": "2026-03-19",
+    "signal_score": 55,
+    "signal_synthesis": {
+      "computedScore": 55,
+      "recommendedRating": "WARM",
+      "contributions": [
+        {
+          "signal": {
+            "type": "tech_adoption",
+            "description": "North American Banking Company is first Apiture client to enable real-time payments via FedNow and RTP platforms. Expanding payments innovation and real-time payment capabilities for consumers and businesses. Indicates technology modernization and regulatory compliance initiatives.",
+            "source": "CB Insights / Apiture announcement",
+            "source_url": "https://www.cbinsights.com/company/north-american-banking-company",
+            "detected_at": "2026-03-19",
+            "strength": 0.75,
+            "category": "tech_stack_change",
+            "decay_rate": "slow"
+          },
+          "decayedStrength": 0.75,
+          "categoryWeight": 1.2,
+          "contribution": 0.9
+        },
+        {
+          "signal": {
+            "type": "regulatory_compliance",
+            "description": "As Federal Reserve member bank with 6 locations and complex payments operations, NABC faces Q1 2026 Nacha Enhanced Fraud Monitoring Rule Phase II deadline (June 19, 2026) requiring risk-based ACH monitoring. This creates IT/operations automation requirements and compliance system pressures.",
+            "source": "Bottomline 2026 Banking Regulatory Outlook",
+            "source_url": "https://www.bottomline.com/resources/blog/2026-north-american-banks-regulatory-focus-threats-innovations-and-deadlines",
+            "detected_at": "2026-03-19",
+            "strength": 0.7,
+            "category": "pain_indicator",
+            "decay_rate": "fast"
+          },
+          "decayedStrength": 0.7,
+          "categoryWeight": 1.1,
+          "contribution": 0.77
+        },
+        {
+          "signal": {
+            "type": "leadership_change",
+            "description": "Alex Bilski and Nora Lovaas promoted within Payments & Technology group. Alex Bilski promoted to CCCP (Certified Compliance and Control Professional); Nora Lovaas promoted to AAP, NCP. Signals expansion/reorganization of payments and tech functions, suggesting capability building and potential system modernization initiatives.",
+            "source": "LinkedIn",
+            "source_url": "https://www.linkedin.com/company/north-american-banking-company",
+            "detected_at": "2026-03-19",
+            "strength": 0.65,
+            "category": "growth_signal",
+            "decay_rate": "medium"
+          },
+          "decayedStrength": 0.65,
+          "categoryWeight": 1,
+          "contribution": 0.65
+        },
+        {
+          "signal": {
+            "type": "hiring",
+            "description": "Active job postings across multiple branches (Maple Grove, Hastings, Edina, Woodbury, 50th & France Minneapolis) for Universal Banker and Loan Operations Specialist roles. Indicates expansion or high turnover requiring operational support scaling.",
+            "source": "Career pages, Indeed, Glassdoor, Minnesota Bankers Association",
+            "source_url": "https://www.nabankco.com/careers",
+            "detected_at": "2026-03-19",
+            "strength": 0.6,
+            "category": "growth_signal",
+            "decay_rate": "fast"
+          },
+          "decayedStrength": 0.6,
+          "categoryWeight": 1,
+          "contribution": 0.6
+        },
+        {
+          "signal": {
+            "type": "leadership_change",
+            "description": "Justin Adducci promoted to Assistant Vice President/Business Banking, indicating expansion of commercial lending and business operations capacity.",
+            "source": "LinkedIn",
+            "source_url": "https://www.linkedin.com/company/north-american-banking-company",
+            "detected_at": "2026-03-19",
+            "strength": 0.55,
+            "category": "growth_signal",
+            "decay_rate": "medium"
+          },
+          "decayedStrength": 0.55,
+          "categoryWeight": 1,
+          "contribution": 0.55
+        },
+        {
+          "signal": {
+            "type": "expansion",
+            "description": "Bank maintains 5-6 locations across Twin Cities (Roseville, Woodbury, Minneapolis, Hastings, Shoreview, Edina). Portfolio indicates multi-location operational complexity requiring unified systems management and branch automation.",
+            "source": "Company website, LinkedIn",
+            "source_url": "https://www.nabankco.com/",
+            "detected_at": "2026-03-19",
+            "strength": 0.5,
+            "category": "pain_indicator",
+            "decay_rate": "slow"
+          },
+          "decayedStrength": 0.5,
+          "categoryWeight": 1.1,
+          "contribution": 0.55
+        }
+      ],
+      "categoryBreakdown": [
+        {
+          "category": "growth_signal",
+          "signalCount": 3,
+          "totalContribution": 1.8,
+          "topSignal": "Alex Bilski and Nora Lovaas promoted within Payments & Technology group. Alex Bilski promoted to CCCP (Certified Compliance and Control Professional); Nora Lovaas promoted to AAP, NCP. Signals expansion/reorganization of payments and tech functions, suggesting capability building and potential system modernization initiatives."
+        },
+        {
+          "category": "pain_indicator",
+          "signalCount": 2,
+          "totalContribution": 1.32,
+          "topSignal": "As Federal Reserve member bank with 6 locations and complex payments operations, NABC faces Q1 2026 Nacha Enhanced Fraud Monitoring Rule Phase II deadline (June 19, 2026) requiring risk-based ACH monitoring. This creates IT/operations automation requirements and compliance system pressures."
+        },
+        {
+          "category": "tech_stack_change",
+          "signalCount": 1,
+          "totalContribution": 0.9,
+          "topSignal": "North American Banking Company is first Apiture client to enable real-time payments via FedNow and RTP platforms. Expanding payments innovation and real-time payment capabilities for consumers and businesses. Indicates technology modernization and regulatory compliance initiatives."
+        }
+      ],
+      "summary": "North American Banking Company has 6 signals detected (6 in the last 14 days). Moderate buying indicators in growth, pain, tech stack. The strongest signal is: \"North American Banking Company is first Apiture client to enable real-time payments via FedNow and RTP platforms. Expanding payments innovation and real-time payment capabilities for consumers and businesses. Indicates technology modernization and regulatory compliance initiatives.\" Good timing for exploratory outreach.",
+      "recommendations": [
+        "North American Banking Company shows moderate signals. Monitor before committing outreach resources.",
+        "Run another signal scan in 2 weeks to see if signals strengthen or decay."
+      ],
+      "synthesizedAt": "2026-03-19"
+    },
+    "score_history": [
+      {
+        "date": "2026-03-19",
+        "from": "HOT",
+        "to": "WARM",
+        "reason": "Signal synthesis: North American Banking Company has 6 signals detected (6 in the last 14 days). Moderate buying indicators in growth, pain, tech stack. The strongest signal is: \"North American Banking Company is first",
+        "signalScore": 55
+      }
+    ]
+  },
+  {
+    "company": "Tradition Capital Bank",
+    "website": "tradition.bank",
+    "industry": "Banking - Community Bank",
+    "hq": "Edina, MN",
+    "size": "146",
+    "revenue": "$30M-$50M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Dan Fagan",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Community bank founded 2005",
+      "likely 1-person IT team or outsourced"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Community bank founded 2005; likely 1-person IT team or outsourced",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 3 | Main phone: (952) 806-0075"
+  },
+  {
+    "company": "TopLine Financial Credit Union",
+    "website": "toplinecu.com",
+    "industry": "Financial Services - Credit Union",
+    "hq": "Maple Grove, MN",
+    "size": "165",
+    "revenue": "$50M-$100M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Mid-size CU",
+      "likely small IT team for 165 employees",
+      "No IT job postings found"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Mid-size CU; likely small IT team for 165 employees; No IT job postings found",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 11 | Main phone: (763) 391-0872"
+  },
+  {
+    "company": "Ideal Credit Union",
+    "website": "idealcu.com",
+    "industry": "Financial Services - Credit Union",
+    "hq": "Woodbury, MN",
+    "size": "200",
+    "revenue": "$50M-$100M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Brian Sherrick",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Mid-size CU",
+      "likely 1-2 person IT team",
+      "No IT job postings found"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Mid-size CU; likely 1-2 person IT team; No IT job postings found",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 6 | Main phone: (651) 770-7071"
+  },
+  {
+    "company": "MY Credit Union",
+    "website": "mymncu.org",
+    "industry": "Financial Services - Credit Union",
+    "hq": "Bloomington, MN",
+    "size": "60",
+    "revenue": "$10M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "24K members",
+      "community CU",
+      "likely thin IT staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "24K members; community CU; likely thin IT staff",
+    "status": "contacted",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (952) 831-0498"
+  },
+  {
+    "company": "Mairs & Power",
+    "website": "mairsandpower.com",
+    "industry": "Financial Services - Investment Firm",
+    "hq": "St. Paul, MN",
+    "size": "50",
+    "revenue": "$30M-$50M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Rob Mairs",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Employee-owned investment firm",
+      "~50 employees",
+      "likely no dedicated IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Employee-owned investment firm; ~50 employees; likely no dedicated IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 222-8478"
+  },
+  {
+    "company": "Accredited Investors Wealth Management",
+    "website": "accredited.com",
+    "industry": "Financial Services - Wealth Management",
+    "hq": "Edina, MN",
+    "size": "57",
+    "revenue": "$20M-$30M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Wil Heupel",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "RIA with ~57 employees",
+      "likely no dedicated IT dept",
+      "No IT job postings found"
+    ],
+    "score": "HOT",
+    "score_reasoning": "RIA with ~57 employees; likely no dedicated IT dept; No IT job postings found",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 841-2222"
+  },
+  {
+    "company": "Carlson Capital Management",
+    "website": "carlsoncap.com",
+    "industry": "Financial Services - Wealth Management",
+    "hq": "Northfield, MN",
+    "size": "80",
+    "revenue": "$20M-$30M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Justin Stets",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "80 employees including 30 advisors",
+      "likely no large IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "80 employees including 30 advisors; likely no large IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 4 | Main phone: (507) 645-5611"
+  },
+  {
+    "company": "Insurance Brokers of Minnesota",
+    "website": "insurancebrokersmn.com",
+    "industry": "Financial Services - Insurance Agency",
+    "hq": "Anoka, MN",
+    "size": "50",
+    "revenue": "$10M-$20M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Gary Sorenson",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "50 employees across 35 locations",
+      "very likely no IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "50 employees across 35 locations; very likely no IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 35 | Main phone: (763) 427-0095"
+  },
+  {
+    "company": "Twin City Group Insurance",
+    "website": "twincitygroup.com",
+    "industry": "Financial Services - Insurance Agency",
+    "hq": "Eden Prairie, MN",
+    "size": "65",
+    "revenue": "$10M-$20M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Mark Sheehan",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Independent insurance agency since 1913",
+      "likely no IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Independent insurance agency since 1913; likely no IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 3 | Main phone: (952) 941-4540"
+  },
+  {
+    "company": "Fafinski Mark & Johnson",
+    "website": "fmjlaw.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Eden Prairie, MN",
+    "size": "52",
+    "revenue": "$10M-$20M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Heidi Carpenter",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "Small commercial law firm",
+      "50 employees",
+      "No dedicated IT dept likely"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Small commercial law firm; 50 employees; No dedicated IT dept likely",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (952) 995-9500"
+  },
+  {
+    "company": "Greene Espel PLLP",
+    "website": "greeneespel.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "58",
+    "revenue": "$10M-$30M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Litigation boutique",
+      "58 employees",
+      "likely no dedicated IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Litigation boutique; 58 employees; likely no dedicated IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 373-0830"
+  },
+  {
+    "company": "Henson Efron",
+    "website": "hensonefron.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "65",
+    "revenue": "$15M-$25M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "35 attorneys 65 total staff",
+      "small firm likely no dedicated IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "35 attorneys 65 total staff; small firm likely no dedicated IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 339-2500"
+  },
+  {
+    "company": "Chestnut Cambronne",
+    "website": "chestnutcambronne.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "75",
+    "revenue": "$15M-$25M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "28 attorneys 14 paralegals",
+      "small firm likely outsources IT"
+    ],
+    "score": "HOT",
+    "score_reasoning": "28 attorneys 14 paralegals; small firm likely outsources IT",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 339-7300"
+  },
+  {
+    "company": "Felhaber Larson",
+    "website": "felhaber.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "80",
+    "revenue": "$20M-$40M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "41 attorneys",
+      "small firm likely outsources IT",
+      "No dedicated IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "41 attorneys; small firm likely outsources IT; No dedicated IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 339-6321"
+  },
+  {
+    "company": "Bassford Remele",
+    "website": "bassford.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "90",
+    "revenue": "$20M-$40M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Nearly 50 attorneys",
+      "oldest top-25 MN firm",
+      "likely 1-person IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Nearly 50 attorneys; oldest top-25 MN firm; likely 1-person IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (612) 333-3000"
+  },
+  {
+    "company": "Nilan Johnson Lewis",
+    "website": "nilanjohnson.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "92",
+    "revenue": "$20M-$40M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Woman-owned law firm",
+      "~92 employees 49 attorneys",
+      "likely 1-person IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Woman-owned law firm; ~92 employees 49 attorneys; likely 1-person IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 305-7500"
+  },
+  {
+    "company": "Larkin Hoffman",
+    "website": "larkinhoffman.com",
+    "industry": "Legal - Law Firm",
+    "hq": "Minneapolis, MN",
+    "size": "152",
+    "revenue": "$50M-$100M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Mid-size law firm",
+      "70+ attorneys 152 total staff",
+      "likely 1-2 IT staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Mid-size law firm; 70+ attorneys 152 total staff; likely 1-2 IT staff",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 835-3800"
+  },
+  {
+    "company": "John A. Knutson & Co. PLLP",
+    "website": "jakcpa.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "Falcon Heights, MN",
+    "size": "60",
+    "revenue": "$8M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "No dedicated IT dept",
+      "~60 employees too small for internal IT"
+    ],
+    "score": "HOT",
+    "score_reasoning": "No dedicated IT dept; ~60 employees too small for internal IT",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 641-1099"
+  },
+  {
+    "company": "Froehling Anderson CPAs",
+    "website": "fa-cpa.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "Minneapolis, MN",
+    "size": "60",
+    "revenue": "$12M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Est. 1946 CPA firm",
+      "aging infrastructure likely"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Est. 1946 CPA firm; aging infrastructure likely",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 545-0424"
+  },
+  {
+    "company": "SDK CPAs (Schechter Dokken Kanter)",
+    "website": "sdkcpa.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "Minneapolis, MN",
+    "size": "75",
+    "revenue": "$18M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "John Lawson",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "No IT job postings found",
+      "mid-size CPA firm unlikely to have dedicated IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "No IT job postings found; mid-size CPA firm unlikely to have dedicated IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 332-5500"
+  },
+  {
+    "company": "Mahoney CPAs and Advisors",
+    "website": "mahoneycpa.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "St. Paul, MN",
+    "size": "90",
+    "revenue": "$12M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Tom Johnson",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "No IT job postings found",
+      "small CPA firm unlikely to have IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "No IT job postings found; small CPA firm unlikely to have IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 227-6695"
+  },
+  {
+    "company": "Olsen Thielen CPAs & Advisors",
+    "website": "otcpas.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "Roseville, MN",
+    "size": "131",
+    "revenue": "$15M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Patrick Powers",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "No dedicated IT dept likely",
+      "traditional CPA firm with ~130 staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "No dedicated IT dept likely; traditional CPA firm with ~130 staff",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (651) 483-4521"
+  },
+  {
+    "company": "Boyum Barenscheer",
+    "website": "myboyum.com",
+    "industry": "Professional Services - CPA & Advisory",
+    "hq": "Minneapolis, MN",
+    "size": "150",
+    "revenue": "$30M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Top 20 TC accounting firm",
+      "3 offices",
+      "growing IT needs"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Top 20 TC accounting firm; 3 offices; growing IT needs",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 3 | Main phone: (952) 854-4244"
+  },
+  {
+    "company": "Redpath and Company",
+    "website": "redpathcpas.com",
+    "industry": "Professional Services - CPA Firm",
+    "hq": "St. Paul, MN",
+    "size": "158",
+    "revenue": "$20M",
+    "crm": "Unknown",
+    "contacts": [
+      {
+        "name": "Ryan Everhart",
+        "title": "CEO/President/Owner"
+      }
+    ],
+    "pain_signals": [
+      "No IT job postings found",
+      "mid-size CPA firm likely 0-1 IT staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "No IT job postings found; mid-size CPA firm likely 0-1 IT staff",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2"
+  },
+  {
+    "company": "Twin Cities International Schools",
+    "website": "twincitiesinternationalschools.org",
+    "industry": "Education - Charter School (K-8)",
+    "hq": "Minneapolis, MN",
+    "size": "91",
+    "revenue": "$6M-$10M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "K-8 charter school, 622 students",
+      "small staff likely has no IT department"
+    ],
+    "score": "HOT",
+    "score_reasoning": "K-8 charter school, 622 students; small staff likely has no IT department",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 821-6470"
+  },
+  {
+    "company": "Aspen Academy",
+    "website": "aspenacademymn.org",
+    "industry": "Education - Charter School K-8",
+    "hq": "Savage, MN",
+    "size": "100",
+    "revenue": "$8M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "100+ employees",
+      "75 licensed educators",
+      "school IT infrastructure"
+    ],
+    "score": "HOT",
+    "score_reasoning": "100+ employees; 75 licensed educators; school IT infrastructure",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 226-0060"
+  },
+  {
+    "company": "Mounds Park Academy",
+    "website": "moundsparkacademy.org",
+    "industry": "Education - Private School (PreK-12)",
+    "hq": "St. Paul, MN",
+    "size": "100",
+    "revenue": "$12M-$18M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Independent private school, 71 FTE teachers",
+      "likely 0-1 IT person"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Independent private school, 71 FTE teachers; likely 0-1 IT person",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 748-5535"
+  },
+  {
+    "company": "The International School of MN",
+    "website": "internationalschoolmn.com",
+    "industry": "Education - Private School PreK-12",
+    "hq": "Eden Prairie, MN",
+    "size": "120",
+    "revenue": "$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "57-acre campus",
+      "global curriculum",
+      "modern IT expectations"
+    ],
+    "score": "HOT",
+    "score_reasoning": "57-acre campus; global curriculum; modern IT expectations",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 918-1800"
+  },
+  {
+    "company": "Groves Learning Organization",
+    "website": "groveslearning.org",
+    "industry": "Education - Private School (1-12)",
+    "hq": "St. Louis Park, MN",
+    "size": "125",
+    "revenue": "$10M-$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "School for students with dyslexia/ADHD",
+      "likely minimal IT staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "School for students with dyslexia/ADHD; likely minimal IT staff",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 920-6377"
+  },
+  {
+    "company": "Great River School",
+    "website": "greatriverschool.org",
+    "industry": "Education - Charter School (K-12)",
+    "hq": "St. Paul, MN",
+    "size": "133",
+    "revenue": "$10M-$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Montessori/IB charter school K-12",
+      "133 staff likely has 0-1 IT person"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Montessori/IB charter school K-12; 133 staff likely has 0-1 IT person",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 305-2780"
+  },
+  {
+    "company": "Nova Classical Academy",
+    "website": "novaclassical.org",
+    "industry": "Education - Charter School (K-12)",
+    "hq": "St. Paul, MN",
+    "size": "139",
+    "revenue": "$12M-$18M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "K-12 charter school, 990 students",
+      "likely 0-1 dedicated IT staff"
+    ],
+    "score": "HOT",
+    "score_reasoning": "K-12 charter school, 990 students; likely 0-1 dedicated IT staff",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 227-8622"
+  },
+  {
+    "company": "Cretin-Derham Hall",
+    "website": "cretin-derhamhall.org",
+    "industry": "Education - Private School (9-12)",
+    "hq": "St. Paul, MN",
+    "size": "150",
+    "revenue": "$15M-$20M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Catholic high school, 911 students",
+      "likely small IT department"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Catholic high school, 911 students; likely small IT department",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 696-3300"
+  },
+  {
+    "company": "St. Croix Preparatory Academy",
+    "website": "stcroixprep.org",
+    "industry": "Education - Charter School (K-12)",
+    "hq": "Stillwater, MN",
+    "size": "150",
+    "revenue": "$12M-$18M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "K-12 charter, 1200 students",
+      "has Technology Director but likely small IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "K-12 charter, 1200 students; has Technology Director but likely small IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (651) 395-5900"
+  },
+  {
+    "company": "Providence Academy",
+    "website": "providenceacademy.org",
+    "industry": "Education - Private School PreK-12",
+    "hq": "Plymouth, MN",
+    "size": "150",
+    "revenue": "$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "900 students",
+      "Catholic school",
+      "campus network needs"
+    ],
+    "score": "HOT",
+    "score_reasoning": "900 students; Catholic school; campus network needs",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (763) 258-2500"
+  },
+  {
+    "company": "St. Paul Academy and Summit School",
+    "website": "spa.edu",
+    "industry": "Education - Private School K-12",
+    "hq": "St. Paul, MN",
+    "size": "192",
+    "revenue": "$25M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "192 employees",
+      "private prep school",
+      "ed-tech needs"
+    ],
+    "score": "HOT",
+    "score_reasoning": "192 employees; private prep school; ed-tech needs",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (651) 698-2451"
+  },
+  {
+    "company": "Minnehaha Academy",
+    "website": "minnehahaacademy.net",
+    "industry": "Education - Private School (PreK-12)",
+    "hq": "Minneapolis, MN",
+    "size": "200",
+    "revenue": "$20M-$25M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Christian private school, 862 students, 2 campuses",
+      "likely small IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Christian private school, 862 students, 2 campuses; likely small IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 2 | Main phone: (612) 729-8321"
+  },
+  {
+    "company": "The Blake School",
+    "website": "blakeschool.org",
+    "industry": "Education - Private School PreK-12",
+    "hq": "Minneapolis, MN",
+    "size": "200",
+    "revenue": "$30M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "3 campuses",
+      "premier private school",
+      "multi-site IT complexity"
+    ],
+    "score": "HOT",
+    "score_reasoning": "3 campuses; premier private school; multi-site IT complexity",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 3 | Main phone: (612) 728-2000"
+  },
+  {
+    "company": "Hope Academy",
+    "website": "hopeacademympls.org",
+    "industry": "Education - Private School (K-12)",
+    "hq": "Minneapolis, MN",
+    "size": "206",
+    "revenue": "$7.7M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Christian private school, 644 students",
+      "small budget suggests no IT department"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Christian private school, 644 students; small budget suggests no IT department",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 235-5437"
+  },
+  {
+    "company": "Benilde-St. Margaret's",
+    "website": "bsmschool.org",
+    "industry": "Education - Private School (6-12)",
+    "hq": "St. Louis Park, MN",
+    "size": "212",
+    "revenue": "$20M-$25M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Catholic college-prep school, 1000+ students",
+      "likely 1-2 person IT team"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Catholic college-prep school, 1000+ students; likely 1-2 person IT team",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (952) 927-4176"
+  },
+  {
+    "company": "Hiawatha Academies",
+    "website": "hiawathaacademies.org",
+    "industry": "Education - Charter School (K-12)",
+    "hq": "Minneapolis, MN",
+    "size": "269",
+    "revenue": "$20M-$30M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "4-school charter network, 1605 students",
+      "likely 1-person IT or no IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "4-school charter network, 1605 students; likely 1-person IT or no IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 4 | Main phone: (612) 243-1900"
+  },
+  {
+    "company": "Greater Minneapolis Crisis Nursery",
+    "website": "crisisnursery.org",
+    "industry": "Nonprofit - Child Welfare",
+    "hq": "Minneapolis, MN",
+    "size": "56",
+    "revenue": "$4M-$6M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Child abuse prevention nonprofit",
+      "56 employees, almost certainly no IT department"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Child abuse prevention nonprofit; 56 employees, almost certainly no IT department",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 1 | Main phone: (612) 276-0969"
+  },
+  {
+    "company": "Tubman",
+    "website": "tubman.org",
+    "industry": "Nonprofit - Human Services",
+    "hq": "Minneapolis, MN",
+    "size": "119",
+    "revenue": "$10M-$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "DV/crisis nonprofit serving 25K people/yr",
+      "119 staff, likely no dedicated IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "DV/crisis nonprofit serving 25K people/yr; 119 staff, likely no dedicated IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 3 | Main phone: (612) 825-0000"
+  },
+  {
+    "company": "ProAct Inc",
+    "website": "proactinc.org",
+    "industry": "Nonprofit - Disability Services",
+    "hq": "Eagan, MN",
+    "size": "140",
+    "revenue": "$10M-$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "50+ yr nonprofit for people with disabilities",
+      "140 employees, likely no IT dept"
+    ],
+    "score": "HOT",
+    "score_reasoning": "50+ yr nonprofit for people with disabilities; 140 employees, likely no IT dept",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 4 | Main phone: (651) 686-0405"
+  },
+  {
+    "company": "Hammer Residences",
+    "website": "hammer.org",
+    "industry": "Nonprofit - Disability Services",
+    "hq": "Wayzata, MN",
+    "size": "146",
+    "revenue": "$15M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "146 employees across 46 homes",
+      "massive distributed endpoint needs"
+    ],
+    "score": "HOT",
+    "score_reasoning": "146 employees across 46 homes; massive distributed endpoint needs",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 46 | Main phone: (952) 473-0417"
+  },
+  {
+    "company": "The Link",
+    "website": "thelinkmn.org",
+    "industry": "Nonprofit - Youth Services",
+    "hq": "Minneapolis, MN",
+    "size": "200",
+    "revenue": "$15M-$20M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Youth services nonprofit, 19 programs across Twin Cities",
+      "likely no IT department"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Youth services nonprofit, 19 programs across Twin Cities; likely no IT department",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 5 | Main phone: (612) 232-5428"
+  },
+  {
+    "company": "YWCA Minneapolis",
+    "website": "ywcampls.org",
+    "industry": "Nonprofit - Social Services",
+    "hq": "Minneapolis, MN",
+    "size": "200",
+    "revenue": "$20M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Multi-site nonprofit",
+      "IT infrastructure aging"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Multi-site nonprofit; IT infrastructure aging",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 5 | Main phone: (612) 332-0501"
+  },
+  {
+    "company": "People Incorporated",
+    "website": "peopleincorporated.org",
+    "industry": "Nonprofit - Mental Health Services",
+    "hq": "Eagan, MN",
+    "size": "400",
+    "revenue": "$50M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "Largest MN community mental health provider",
+      "60+ programs",
+      "distributed IT"
+    ],
+    "score": "HOT",
+    "score_reasoning": "Largest MN community mental health provider; 60+ programs; distributed IT",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 15 | Main phone: (651) 774-0011"
+  },
+  {
+    "company": "Catholic Charities Twin Cities",
+    "website": "cctwincities.org",
+    "industry": "Nonprofit - Social Services",
+    "hq": "Minneapolis, MN",
+    "size": "500",
+    "revenue": "$60M",
+    "crm": "Unknown",
+    "contacts": [],
+    "pain_signals": [
+      "500+ staff",
+      "10+ locations",
+      "complex nonprofit IT environment"
+    ],
+    "score": "HOT",
+    "score_reasoning": "500+ staff; 10+ locations; complex nonprofit IT environment",
+    "status": "new",
+    "last_action": "Imported from research",
+    "next_action": "Review and qualify",
+    "next_action_date": "2026-03-20",
+    "product_config": "ais-mn",
+    "notes": "Locations: 10 | Main phone: (612) 204-8500"
+  }
+]

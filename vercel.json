@@ -1,0 +1,20 @@
+{
+  "installCommand": "npm install && cd client && npm install",
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/auth/:path*", "destination": "/api/auth/login" },
+    { "source": "/api/prospects/:path*", "destination": "/api/prospects" },
+    { "source": "/api/configs/:path*", "destination": "/api/configs" },
+    { "source": "/api/drafts/:path*", "destination": "/api/drafts" },
+    { "source": "/api/chat-history/:path*", "destination": "/api/chat-history" },
+    { "source": "/api/chat/:path*", "destination": "/api/chat" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "maxDuration": 60
+    }
+  }
+}
