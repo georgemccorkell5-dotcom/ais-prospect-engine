@@ -150,7 +150,7 @@ async function handleSignalScan(req: VercelRequest, res: VercelResponse) {
         sendSSE(res, "done", ""); res.end();
       },
       onError: (error) => { sendSSE(res, "error", error.message); res.end(); },
-    }, { webSearch: true });
+    }, { webSearch: true, model: "claude-haiku-4-5-20251001" });
 }
 
 async function handleContactEnrich(req: VercelRequest, res: VercelResponse) {
@@ -195,7 +195,7 @@ Search thoroughly. Return ONLY JSON: {"linkedin":"url or empty","email":"email o
         sendSSE(res, "done", ""); res.end();
       },
       onError: (error) => { sendSSE(res, "error", error.message); res.end(); },
-    }, { webSearch: true });
+    }, { webSearch: true, model: "claude-haiku-4-5-20251001" });
 }
 
 async function handleResearch(req: VercelRequest, res: VercelResponse) {
@@ -242,5 +242,5 @@ async function handleProspectSearch(req: VercelRequest, res: VercelResponse) {
         sendSSE(res, "error", msg.includes("rate_limit") ? "Rate limit hit. Wait a minute and try again." : msg);
         sendSSE(res, "done", ""); res.end();
       },
-    }, { webSearch: true });
+    }, { webSearch: true, model: "claude-haiku-4-5-20251001" });
 }

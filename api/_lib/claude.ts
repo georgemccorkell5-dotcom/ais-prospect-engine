@@ -16,7 +16,7 @@ export async function streamChat(
   systemPrompt: string,
   messages: { role: "user" | "assistant"; content: string }[],
   callbacks: StreamCallbacks,
-  options?: { webSearch?: boolean }
+  options?: { webSearch?: boolean; model?: string }
 ): Promise<void> {
   try {
     const tools = options?.webSearch
@@ -24,7 +24,7 @@ export async function streamChat(
       : undefined;
 
     const stream = await client.messages.stream({
-      model: "claude-opus-4-7",
+      model: options?.model || "claude-opus-4-7",
       max_tokens: 4096,
       system: systemPrompt,
       messages,
