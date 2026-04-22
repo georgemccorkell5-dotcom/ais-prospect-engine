@@ -155,6 +155,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
+    // Only run on the first Monday of the month (day of month 1-7 AND Monday).
+    // Vercel cron fires every Monday; we filter in the handler because standard
+    // cron doesn't support "first Monday of month" syntax. Manual POST triggers
+    // bypass this guard.
+    const now = new Date();
+    const isFirstMonday = now.getUTCDay() === 1 && now.getUTCDate() <= 7;
+    if (!isFirstMonday) {
+      res.json({ status: "skipped", reason: "not first Monday of month" });
+      return;
+    }
   }
 
   try {
