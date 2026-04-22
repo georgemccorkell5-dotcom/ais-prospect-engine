@@ -83,10 +83,18 @@ ${signalContext}
 ${contactIndex !== undefined && prospect.contacts[contactIndex] ? `\n## SELECTED TARGET CONTACT\nThis email MUST be addressed to: ${prospect.contacts[contactIndex].name} (${prospect.contacts[contactIndex].title}). Use their first name in the greeting and tailor the messaging to their specific role and responsibilities.\n` : ""}
 Draft a personalized outreach email following the playbook frameworks. The opening line must be about THEM, not us. Reference specific details about this prospect.${contactIndex !== undefined && prospect.contacts[contactIndex] ? ` Address the email to ${prospect.contacts[contactIndex].name} and tailor it to their role as ${prospect.contacts[contactIndex].title}.` : " Use the RECIPIENT's name (from the contacts list above) in the greeting."}
 
+TONE RULES (CRITICAL — this is a Minnesota company selling to Minnesota businesses):
+- Be warm, friendly, and approachable. We are midwesterners talking to midwesterners. Not aggressive, not pushy.
+- Pain points should be framed gently — "a lot of teams we talk to are dealing with..." or "one thing that keeps coming up is..." — not "you're exposed" or "your systems are failing."
+- Questions should feel like genuine curiosity, not interrogation. "How are you currently handling..." not "How confident are you in..."
+- The vibe is a friendly neighbor who happens to be really good at IT, not a salesperson working a script.
+- Still be direct and concise — friendly doesn't mean fluffy. Get to the point, just do it warmly.
+
 IMPORTANT FORMATTING RULES:
+- KEEP IT SHORT. Cold emails must be 60-100 words max (not counting subject line or signature). 4-6 sentences total. If you can say it in fewer words, do it. No bullet lists, no multiple paragraphs. Think: one short hook, one pain point, one value line, one CTA. That's it.
 - NEVER use em dashes (—) anywhere in the email. Use commas, periods, or rewrite the sentence instead.
 - Output ONLY the email. Start with "Subject: ..." then the email body. End with the signature line.
-- The signature must ALWAYS be from the SENDER, not the recipient. Sign off as:\n  George McCorkell\n  Monarch Technology Group
+- The signature must ALWAYS be from the SENDER, not the recipient. Sign off as:\n  Matt Keating\n  Director of Sales | IT & Cybersecurity Services\n  Advanced Imaging Solutions\n  E: mattkeating@ais-mn.com\n  P: 952-516-7715
 - Do NOT add any analysis, commentary, explanation, or reasoning after the email. No "Why this works", no "Notes:", no breakdown of the framework. Just the email. Nothing else.`;
 }
 
@@ -113,13 +121,13 @@ You are a sales research analyst. Deep research this specific company and enrich
 
 1. **Company details**: What they sell, headquarters, recent news, funding, market position
 2. **Location & contact info**: Find the company's physical address (street, city, state, zip) and main phone number. For fabricators, builders, or shops — the shop/office location is critical. Search the company website footer, Google Maps, or business directories.
-3. **Decision-maker contacts (TOP PRIORITY)**: Find real names and titles for VP Sales, CRO, CMO, Head of RevOps, CEO, CFO, IT leaders, owner, or similar leadership. For EVERY contact you find, you MUST do THREE searches:
+3. **Decision-maker contacts (TOP PRIORITY)**: Find real names and titles for CEO, CFO, CIO, CISO, IT Director, IT Manager, VP Operations, COO, Owner, or similar leadership. For EVERY contact you find, you MUST do THREE searches:
    - **LinkedIn**: Search "[Name] [Company] site:linkedin.com/in" — try multiple query variations. A real LinkedIn URL is critical for outreach.
    - **Email**: Search "[Name] [Company] email" and also search for the company's email pattern. Check the company website domain and try common patterns: first.last@domain.com, flast@domain.com, firstl@domain.com, first@domain.com. Also search "[Company] email format" or check sites like Hunter.io, RocketReach, or SignalHire results that may appear in search. Finding a real email address is just as important as LinkedIn — do not skip this step.
    - **Phone**: Search for direct phone numbers if available. Check the company website contact page for individual extensions or direct lines. If only a main company number is available, include that.
    If you cannot find a LinkedIn URL, email, or phone after searching, leave the field as an empty string — NEVER put "Unknown" or "N/A".
-4. **Tech stack signals**: What CRM, sales tools, marketing tools they use (check job postings, tech review sites, case studies)
-5. **Pain signals**: Recent job postings (especially GTM Engineer, RevOps, Sales Ops roles), leadership changes, mergers/acquisitions, growth or decline indicators
+4. **Tech stack signals**: What IT infrastructure, security tools, cloud platforms, and business systems they use (check job postings, tech review sites, case studies)
+5. **Pain signals**: Recent job postings (especially IT, security, compliance roles), leadership changes, mergers/acquisitions, compliance pressure, growth without IT investment
 6. **Personalization hooks**: Specific recent news, blog posts, press releases, or LinkedIn activity from key contacts that could be referenced in outreach
 
 ## Output Format
@@ -196,25 +204,26 @@ ${existingSignalsStr}
 You are a buying signal analyst. Search for FRESH buying signals for this company that indicate they may be entering a buying cycle or have active pain points relevant to our product.
 
 Search for:
-1. **Hiring signals**: Job postings for GTM Engineer, RevOps, Sales Ops, SDR/AE roles, marketing ops. More postings = stronger signal.
-2. **Leadership changes**: New CRO, VP Sales, CMO, VP Marketing, Head of RevOps in the last 6 months. New leaders audit and rebuild stacks.
-3. **Funding / M&A**: Recent funding rounds, acquisitions, mergers. Growth capital = scaling pressure.
-4. **Technology changes**: New tool adoptions, vendor switches, RFPs. Check job postings for tech stack clues.
-5. **Company news**: Expansion, new offices, product launches, partnerships, earnings. Growth = GTM complexity.
-6. **Content signals**: LinkedIn posts from leadership about AI, sales productivity, tool frustration, digital transformation.
-7. **Competitive signals**: Competitors winning deals, market shifts, new entrants threatening their position.
+1. **Hiring signals**: Job postings for IT Director, CISO, Security Analyst, Compliance Officer, Help Desk, Network Engineer, Systems Administrator. More postings = stronger signal (indicates understaffed IT).
+2. **Leadership changes**: New CIO, IT Director, CISO, CFO, COO, VP Operations in the last 6 months. New leaders audit vendors and rebuild infrastructure within 90 days.
+3. **Compliance & audit signals**: HIPAA audit findings, CMMC certification efforts, FINRA/SEC examination results, GLBA compliance gaps, cyber insurance renewal or denial, failed security assessments, vendor risk questionnaire activity.
+4. **Security incidents**: Ransomware attacks, email compromise/BEC incidents, data breaches, phishing campaigns targeting the company or their industry. Even industry-wide incidents create urgency.
+5. **Technology changes**: Legacy system replacements, firewall/endpoint changes, cloud migrations, new office/location IT buildouts, MSP/MSSP vendor switches or RFPs.
+6. **Company news**: Expansion, new locations, acquisitions, mergers, regulatory changes affecting their industry, growth announcements. Growth = IT complexity without corresponding IT investment.
+7. **Content signals**: LinkedIn posts from leadership about cybersecurity concerns, IT challenges, compliance pressure, digital transformation, or frustration with current IT support.
+8. **Pain indicators**: Downtime incidents, IT outage reports, negative Glassdoor reviews mentioning IT/technology issues, public compliance violations.
 
 ## Signal Strength Guide
-- 0.9-1.0: Confirmed, recent, directly relevant (e.g., hired a CRO last week who is known to rebuild stacks)
-- 0.7-0.8: Strong indicator, verified (e.g., 5 open SDR roles posted this month)
-- 0.5-0.6: Moderate indicator (e.g., company blog post about "digital transformation journey")
-- 0.3-0.4: Weak but notable (e.g., one job posting mentions Salesforce experience)
+- 0.9-1.0: Confirmed, recent, directly relevant (e.g., ransomware incident last month, failed HIPAA audit)
+- 0.7-0.8: Strong indicator, verified (e.g., 3 open IT roles posted this month, new CISO hired)
+- 0.5-0.6: Moderate indicator (e.g., cyber insurance requirements tightening in their industry)
+- 0.3-0.4: Weak but notable (e.g., one job posting mentions security certifications)
 - 0.1-0.2: Background noise, barely relevant
 
 ## Decay Rate Guide
 - "fast": Signal loses relevance in ~2 weeks (e.g., job posting may be filled)
-- "medium": Signal relevant for ~30 days (e.g., leadership change, funding round)
-- "slow": Signal relevant for ~90 days (e.g., strategic shift, M&A, market repositioning)
+- "medium": Signal relevant for ~30 days (e.g., leadership change, security incident response)
+- "slow": Signal relevant for ~90 days (e.g., compliance deadline, M&A integration, regulatory change)
 
 ## Output Format
 Return ONLY a valid JSON object (no markdown fences, no explanation) with this structure:
@@ -276,10 +285,10 @@ export async function buildProspectSearchContext(query: string, count: number): 
     loadProspects(),
   ]);
 
-  const existingCompanies = prospects.map((p) => {
+  const existingCompanies = prospects.map((p, i) => {
     const domain = p.website ? p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/.*$/, "") : "";
-    return domain ? `${p.company} (${domain})` : p.company;
-  }).join(", ");
+    return `- ${p.company}${domain ? ` | ${domain}` : ""}`;
+  }).join("\n");
 
   const icpMatch = activeConfig.match(/## ICP[\s\S]*?(?=\n## MESSAGING|## COMPETITIVE|$)/i);
   const qualMatch = activeConfig.match(/## QUALIFYING[\s\S]*$/i);
@@ -296,14 +305,18 @@ Today is ${new Date().toISOString().split("T")[0]}.
 ## Active Product Config (ICP & Qualifiers)
 ${trimmedConfig || activeConfig}
 
-## Already in Pipeline (DO NOT include these — check both company name AND website domain)
+## DUPLICATE BLOCKLIST — These companies are already in the pipeline. DO NOT return any of them.
 ${existingCompanies}
 
-If a company you find matches ANY of the above by name (even partial match like "ServiceTitan" vs "ServiceTitan Inc.") or by website domain, SKIP it entirely.
+DUPLICATE CHECK RULES (CRITICAL):
+- Before including ANY company in your results, check it against EVERY entry in the blocklist above.
+- Match by company name (even partial: "ServiceTitan" matches "ServiceTitan Inc.") OR by website domain.
+- If a company is on the blocklist, SKIP IT. Do not include it under any circumstances.
+- It is better to return FEWER results than to return a duplicate. If you can only find 3 unique companies instead of ${count}, return 3.
 
 ## Search Request
 The user is looking for: "${query}"
-Find exactly ${count} companies that match this search AND fit the ICP criteria above.
+Find up to ${count} NEW companies (not in the blocklist) that match this search AND fit the ICP criteria above.
 
 ## Instructions
 1. Search the web for companies matching the user's request
@@ -352,12 +365,12 @@ Return ONLY a valid JSON object (no markdown fences, no explanation):
 }
 
 IMPORTANT:
-- Find exactly ${count} companies. This is your primary objective.
+- Find up to ${count} NEW companies. Returning fewer is acceptable if you cannot find ${count} unique, non-duplicate matches. NEVER pad results with duplicates.
 - Do NOT fabricate companies. Every company must be real and verifiable.
-- Do NOT include companies already in the pipeline
+- ZERO DUPLICATES. Every company you return MUST be checked against the blocklist. This is your highest priority constraint.
 - LinkedIn URLs must be real — search for them, don't guess
 - If you can't find a LinkedIn URL after searching, use empty string "" — NEVER "Unknown"
 - Use the ICP as a guide but DO NOT be overly strict. If the user's search query describes a type of company, find companies matching THEIR description and score them against the ICP. A COLD score is fine — let the user decide what to pursue.
-- NEVER return an empty prospects array. If perfect ICP matches don't exist, return the closest matches you can find and score them COLD with honest reasoning.
+- If you cannot find any NEW companies that aren't duplicates, return an empty prospects array with a search_summary explaining why. This is better than returning duplicates.
 - You MUST return valid JSON. Do NOT include any conversational text, explanations, or questions before or after the JSON. ONLY the JSON object.`;
 }
