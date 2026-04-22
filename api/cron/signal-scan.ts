@@ -34,7 +34,7 @@ async function scanProspect(prospectIndex: number): Promise<{
   const systemPrompt = await buildSignalScanContext(prospectIndex);
 
   const response = await client.messages.create({
-    model: "claude-opus-4-6",
+    model: "claude-opus-4-7",
     max_tokens: 4096,
     system: systemPrompt,
     messages: [
