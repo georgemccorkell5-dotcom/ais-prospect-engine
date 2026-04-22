@@ -12,7 +12,7 @@ import { setupSSE, sendSSE, extractJSON } from "./_lib/sse.js";
 import { getSubPath } from "./_lib/routing.js";
 import type { Signal, ScoreChange } from "./_lib/types.js";
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed" }); return; }

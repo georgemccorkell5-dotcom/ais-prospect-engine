@@ -15,20 +15,33 @@ export function sendSSE(res: VercelResponse, event: string, data: unknown) {
 export function extractJSON(text: string): string {
   let jsonStr = text.trim();
 
-  // Try markdown fences first
+  // Strip markdown fences if present
   const fenceMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
   if (fenceMatch) {
     jsonStr = fenceMatch[1].trim();
   }
 
-  // Fallback: find the first { to the last }
-  if (!jsonStr.startsWith("{")) {
-    const firstBrace = jsonStr.indexOf("{");
-    const lastBrace = jsonStr.lastIndexOf("}");
-    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
-      jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
+  // Walk braces to find the first complete top-level JSON object, accounting
+  // for string literals and escapes. Robust against preamble, trailing
+  // commentary, and nested braces inside strings.
+  const firstBrace = jsonStr.indexOf("{");
+  if (firstBrace === -1) return jsonStr;
+
+  let depth = 0;
+  let inString = false;
+  let escape = false;
+  for (let i = firstBrace; i < jsonStr.length; i++) {
+    const c = jsonStr[i];
+    if (escape) { escape = false; continue; }
+    if (c === "\\") { escape = true; continue; }
+    if (c === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (c === "{") depth++;
+    else if (c === "}") {
+      depth--;
+      if (depth === 0) return jsonStr.slice(firstBrace, i + 1);
     }
   }
 
-  return jsonStr;
+  return jsonStr.slice(firstBrace);
 }
