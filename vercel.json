@@ -10,11 +10,21 @@
     { "source": "/api/drafts/:path*", "destination": "/api/drafts" },
     { "source": "/api/chat-history/:path*", "destination": "/api/chat-history" },
     { "source": "/api/chat/:path*", "destination": "/api/chat" },
+    { "source": "/api/cron/:path*", "destination": "/api/cron/signal-scan" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "functions": {
+    "api/cron/signal-scan.ts": {
+      "maxDuration": 300
+    },
     "api/**/*.ts": {
       "maxDuration": 60
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/signal-scan",
+      "schedule": "0 10 * * 1"
+    }
+  ]
 }

@@ -64,7 +64,10 @@ export function useChat(endpoint: string = "/chat/stream") {
       let accumulated = "";
       let finalSources: { title: string; url: string }[] | undefined;
 
-      controllerRef.current = apiStream(endpoint, { messages: newMessages, ...extraBody }, {
+      // Strip UI-only fields (searching, sources) before sending to API
+      const apiMessages = newMessages.map(({ role, content }) => ({ role, content }));
+
+      controllerRef.current = apiStream(endpoint, { messages: apiMessages, ...extraBody }, {
         onText: (text) => {
           accumulated += text;
           setMessages((prev) => {

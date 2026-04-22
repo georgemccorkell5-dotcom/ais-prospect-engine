@@ -1,5 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import { apiFetch } from "../lib/api";
+import { useProspects } from "../hooks/useProspects";
 
 interface SignalOverview {
   totalProspects: number;
@@ -103,9 +105,65 @@ function signalScoreColor(score: number): string {
 }
 
 export default function SignalIntel() {
+  const navigate = useNavigate();
+  const { prospects } = useProspects();
   const [overview, setOverview] = useState<(SignalOverview & { configName?: string }) | null>(null);
   const [digest, setDigest] = useState<DigestData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [scanning, setScanning] = useState(false);
+  const [scanStatus, setScanStatus] = useState("");
+
+  // Map company names to their pipeline index for clickable links
+  const companyIndexMap = useMemo(() => {
+    const map = new Map<string, number>();
+    prospects.forEach((p, i) => {
+      map.set(p.company.toLowerCase(), i);
+    });
+    return map;
+  }, [prospects]);
+
+  const getProspectIndex = (company: string): number | null => {
+    return companyIndexMap.get(company.toLowerCase()) ?? null;
+  };
+
+  const handleProspectClick = (company: string) => {
+    const idx = getProspectIndex(company);
+    if (idx !== null) navigate(`/prospect/${idx}`);
+  };
+
+  const handleRunScan = async () => {
+    setScanning(true);
+    setScanStatus("Building scan queue...");
+    try {
+      let remaining = 1;
+      let totalProcessed = 0;
+      while (remaining > 0) {
+        const res = await apiFetch<{
+          status: string;
+          processed?: Array<{ company: string; success: boolean; scoreChanged?: boolean }>;
+          remaining: number;
+          message?: string;
+        }>("/cron/signal-scan", { method: "POST" });
+
+        const batchCount = res.processed?.length || 0;
+        totalProcessed += batchCount;
+        remaining = res.remaining;
+
+        if (res.status === "complete") {
+          setScanStatus(`Scan complete — ${totalProcessed} prospects scanned`);
+          remaining = 0;
+        } else {
+          setScanStatus(`Scanning... ${totalProcessed} done, ${remaining} remaining`);
+        }
+      }
+      load();
+    } catch (e) {
+      setScanStatus(`Scan error: ${String(e)}`);
+    } finally {
+      setScanning(false);
+      setTimeout(() => setScanStatus(""), 8000);
+    }
+  };
 
   const load = useCallback(() => {
     setLoading(true);
@@ -152,11 +210,19 @@ export default function SignalIntel() {
       <div className="mb-6 p-4 bg-gray-900/80 border border-gray-800/60 rounded-xl">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
-            <div className={`w-2.5 h-2.5 rounded-full ${queueActive ? "bg-green-500 animate-pulse" : "bg-gray-600"}`} />
+            <div className={`w-2.5 h-2.5 rounded-full ${queueActive || scanning ? "bg-green-500 animate-pulse" : "bg-gray-600"}`} />
             <span className="text-sm font-medium text-white">
-              {queueActive ? "Engine Active — Scanning" : "Engine Idle — Next scan Monday 5am"}
+              {scanning ? scanStatus : queueActive ? "Engine Active — Scanning" : "Engine Idle — Next scan Monday 5am"}
             </span>
           </div>
+          {!scanning && !queueActive && (
+            <button
+              onClick={handleRunScan}
+              className="text-xs font-medium px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
+            >
+              Run Scan Now
+            </button>
+          )}
           {queueActive && digest?.queue && (
             <span className="text-xs text-gray-400">
               {digest.queue.completed} scanned / {digest.queue.remaining + digest.queue.completed} total
@@ -171,10 +237,13 @@ export default function SignalIntel() {
             />
           </div>
         )}
-        {hasDigest && (
+        {hasDigest && !scanning && (
           <div className="text-xs text-gray-500 mt-2">
             Last digest: {new Date(digest.digest!.generatedAt).toLocaleDateString()} — {digest.digest!.totalScanned} prospects scanned
           </div>
+        )}
+        {!scanning && scanStatus && (
+          <div className="text-xs text-green-400 mt-2">{scanStatus}</div>
         )}
       </div>
 
@@ -230,22 +299,29 @@ export default function SignalIntel() {
           <p className="text-xs text-gray-500 mb-4">Highest signal scores — reach out to these first</p>
           {overview?.topSignalProspects && overview.topSignalProspects.length > 0 ? (
             <div className="space-y-2">
-              {overview.topSignalProspects.slice(0, 12).map((p, i) => (
-                <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg bg-gray-800/40">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <span className={`text-sm font-bold w-8 ${signalScoreColor(p.signalScore)}`}>
-                      {p.signalScore}
-                    </span>
-                    <div className="min-w-0">
-                      <div className="text-sm text-white truncate">{p.company}</div>
-                      <div className="text-xs text-gray-500">{configLabel(p.config)}</div>
+              {overview.topSignalProspects.slice(0, 12).map((p, i) => {
+                const clickable = getProspectIndex(p.company) !== null;
+                return (
+                  <div
+                    key={i}
+                    className={`flex items-center justify-between py-2 px-3 rounded-lg bg-gray-800/40 ${clickable ? "cursor-pointer hover:bg-gray-800/70 transition-colors" : ""}`}
+                    onClick={() => clickable && handleProspectClick(p.company)}
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className={`text-sm font-bold w-8 ${signalScoreColor(p.signalScore)}`}>
+                        {p.signalScore}
+                      </span>
+                      <div className="min-w-0">
+                        <div className={`text-sm truncate ${clickable ? "text-blue-400 hover:text-blue-300" : "text-white"}`}>{p.company}</div>
+                        <div className="text-xs text-gray-500">{configLabel(p.config)}</div>
+                      </div>
                     </div>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded border ${scoreBg[p.score]} ${scoreColor[p.score]}`}>
+                      {p.score}
+                    </span>
                   </div>
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded border ${scoreBg[p.score]} ${scoreColor[p.score]}`}>
-                    {p.score}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div className="text-sm text-gray-500 py-8 text-center">
@@ -265,21 +341,28 @@ export default function SignalIntel() {
           <p className="text-xs text-gray-500 mb-4">Prospects that changed score based on signal detection</p>
           {overview?.recentScoreChanges && overview.recentScoreChanges.length > 0 ? (
             <div className="space-y-2">
-              {overview.recentScoreChanges.slice(0, 12).map((sc, i) => (
-                <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg bg-gray-800/40">
-                  <div className="min-w-0">
-                    <div className="text-sm text-white truncate">{sc.company}</div>
-                    <div className="text-xs text-gray-500">{configLabel(sc.config)} — {sc.date}</div>
+              {overview.recentScoreChanges.slice(0, 12).map((sc, i) => {
+                const clickable = getProspectIndex(sc.company) !== null;
+                return (
+                  <div
+                    key={i}
+                    className={`flex items-center justify-between py-2 px-3 rounded-lg bg-gray-800/40 ${clickable ? "cursor-pointer hover:bg-gray-800/70 transition-colors" : ""}`}
+                    onClick={() => clickable && handleProspectClick(sc.company)}
+                  >
+                    <div className="min-w-0">
+                      <div className={`text-sm truncate ${clickable ? "text-blue-400 hover:text-blue-300" : "text-white"}`}>{sc.company}</div>
+                      <div className="text-xs text-gray-500">{configLabel(sc.config)} — {sc.date}</div>
+                    </div>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <span className={`text-xs font-medium ${scoreColor[sc.from]}`}>{sc.from}</span>
+                      <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                      <span className={`text-xs font-medium ${scoreColor[sc.to]}`}>{sc.to}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 shrink-0">
-                    <span className={`text-xs font-medium ${scoreColor[sc.from]}`}>{sc.from}</span>
-                    <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                    <span className={`text-xs font-medium ${scoreColor[sc.to]}`}>{sc.to}</span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div className="text-sm text-gray-500 py-8 text-center">
@@ -299,10 +382,16 @@ export default function SignalIntel() {
             Weekly Digest — {digest.digest!.weekOf}
           </h3>
           <div className="space-y-3">
-            {digest.digest!.scoreChanges.map((sc, i) => (
-              <div key={i} className="p-3 rounded-lg bg-gray-800/40">
+            {digest.digest!.scoreChanges.map((sc, i) => {
+              const clickable = getProspectIndex(sc.company) !== null;
+              return (
+              <div
+                key={i}
+                className={`p-3 rounded-lg bg-gray-800/40 ${clickable ? "cursor-pointer hover:bg-gray-800/70 transition-colors" : ""}`}
+                onClick={() => clickable && handleProspectClick(sc.company)}
+              >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-sm font-medium text-white">{sc.company}</span>
+                  <span className={`text-sm font-medium ${clickable ? "text-blue-400 hover:text-blue-300" : "text-white"}`}>{sc.company}</span>
                   <div className="flex items-center gap-1.5">
                     <span className={`text-xs font-medium ${scoreColor[sc.from]}`}>{sc.from}</span>
                     <span className="text-gray-600">→</span>
@@ -312,7 +401,8 @@ export default function SignalIntel() {
                 </div>
                 <p className="text-xs text-gray-400">{sc.summary}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
