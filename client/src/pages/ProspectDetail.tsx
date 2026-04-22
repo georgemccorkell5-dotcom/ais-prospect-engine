@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useProspect } from "../hooks/useProspects";
 import { apiStream } from "../lib/api";
 import ScoreBadge from "../components/ScoreBadge";
@@ -303,6 +303,47 @@ export default function ProspectDetail() {
           )}
         </Section>
 
+        {/* Tech Stack (collapsible) */}
+        {(prospect.tech_stack && prospect.tech_stack.length > 0) && (
+          <CollapsibleSection title="Tech Stack" icon="🔧" subtitle={`${prospect.tech_stack.length} technologies detected`}>
+            <div className="flex flex-wrap gap-2">
+              {prospect.tech_stack.map((tech, i) => (
+                <span key={i} className="text-xs px-2.5 py-1 bg-gray-800/70 border border-gray-700/40 rounded-lg text-gray-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            {prospect.apollo_enrichment && (
+              <div className="mt-4 pt-3 border-t border-gray-800/40">
+                <div className="text-xs text-gray-500 mb-2">Apollo Enrichment</div>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  {prospect.apollo_enrichment.estimated_num_employees && (
+                    <div><span className="text-gray-500">Employees:</span> <span className="text-gray-300">{prospect.apollo_enrichment.estimated_num_employees}</span></div>
+                  )}
+                  {prospect.apollo_enrichment.annual_revenue_printed && (
+                    <div><span className="text-gray-500">Revenue:</span> <span className="text-gray-300">{prospect.apollo_enrichment.annual_revenue_printed}</span></div>
+                  )}
+                  {prospect.apollo_enrichment.linkedin_url && (
+                    <div>
+                      <a href={prospect.apollo_enrichment.linkedin_url} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 text-xs transition-colors">
+                        Company LinkedIn
+                      </a>
+                    </div>
+                  )}
+                  {prospect.apollo_enrichment.phone && (
+                    <div><span className="text-gray-500">Phone:</span> <span className="text-gray-300">{prospect.apollo_enrichment.phone}</span></div>
+                  )}
+                </div>
+                {prospect.apollo_enrichment.enrichedAt && (
+                  <div className="text-xs text-gray-600 mt-2">
+                    Last enriched: {new Date(prospect.apollo_enrichment.enrichedAt).toLocaleDateString()}
+                  </div>
+                )}
+              </div>
+            )}
+          </CollapsibleSection>
+        )}
+
         {/* Signal Detection */}
         <SignalPanel
           signals={prospect.signals || []}
@@ -397,6 +438,37 @@ function Field({
         )
       ) : (
         <div className="text-sm text-gray-200">{value || "—"}</div>
+      )}
+    </div>
+  );
+}
+
+function CollapsibleSection({ title, icon, subtitle, children }: {
+  title: string; icon: string; subtitle?: string; children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-gray-800/60 rounded-xl bg-gray-900/30">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full p-5 flex items-center justify-between text-left"
+      >
+        <h3 className="text-sm font-medium text-gray-400 flex items-center gap-2">
+          <span>{icon}</span>
+          <span className="uppercase tracking-wider">{title}</span>
+          {subtitle && <span className="text-xs text-gray-600 normal-case tracking-normal ml-2">{subtitle}</span>}
+        </h3>
+        <svg
+          className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      {open && (
+        <div className="px-5 pb-5 pt-0">
+          {children}
+        </div>
       )}
     </div>
   );

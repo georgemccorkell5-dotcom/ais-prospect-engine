@@ -114,6 +114,7 @@ async function handleSignalScan(req: VercelRequest, res: VercelResponse) {
           const signalScore = result.signal_score || 0;
           const scanSummary = result.scan_summary || "";
           const key = getProspectsKey();
+          // Re-read to get latest data (including Apollo enrichment saved during context build)
           const prospects = await readJSON<Record<string, unknown>[]>(key);
           if (prospectIndex >= 0 && prospectIndex < prospects.length) {
             const existing = (prospects[prospectIndex].signals as unknown[]) || [];

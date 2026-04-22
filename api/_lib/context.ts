@@ -1,5 +1,6 @@
-import { readText, readJSON } from "./kvStore.js";
+import { readText, readJSON, writeJSON } from "./kvStore.js";
 import type { Prospect, Signal } from "./types.js";
+import { enrichProspectWithApollo, formatApolloContext } from "./apollo.js";
 
 export function getProspectsKey(): string {
   return "prospects:ais-leads";
@@ -107,6 +108,40 @@ export async function buildDeepResearchContext(prospectIndex: number): Promise<s
   const prospect = prospects[prospectIndex];
   if (!prospect) throw new Error(`Prospect at index ${prospectIndex} not found`);
 
+  // Enrich with Apollo data if domain is available
+  let apolloContext = "";
+  if (prospect.website) {
+    try {
+      const domain = prospect.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/.*$/, "");
+      const enrichment = await enrichProspectWithApollo(domain, prospect.company);
+      apolloContext = formatApolloContext(enrichment);
+
+      // Persist Apollo data onto the prospect record
+      if (enrichment.organization) {
+        const org = enrichment.organization;
+        const key = getProspectsKey();
+        const allProspects = await readJSON<Record<string, unknown>[]>(key);
+        if (prospectIndex >= 0 && prospectIndex < allProspects.length) {
+          const techs = org.technology_names || org.technologies || [];
+          if (techs.length > 0) {
+            allProspects[prospectIndex].tech_stack = techs;
+          }
+          allProspects[prospectIndex].apollo_enrichment = {
+            estimated_num_employees: org.estimated_num_employees,
+            annual_revenue_printed: org.annual_revenue_printed,
+            technologies: techs,
+            linkedin_url: org.linkedin_url,
+            phone: org.phone,
+            enrichedAt: new Date().toISOString(),
+          };
+          await writeJSON(key, allProspects);
+        }
+      }
+    } catch {
+      // Apollo enrichment is optional — continue without it
+    }
+  }
+
   return `# Deep Research Context
 Today is ${new Date().toISOString().split("T")[0]}.
 
@@ -115,6 +150,7 @@ ${activeConfig}
 
 ## Target Prospect — Current Data
 ${JSON.stringify(prospect, null, 2)}
+${apolloContext ? `\n${apolloContext}\n\nThe Apollo data above is VERIFIED. Use it as your starting point — it provides confirmed employee count, revenue, tech stack, and contact details. Focus your web search on filling gaps and finding recent news, pain signals, and personalization hooks that Apollo doesn't cover.` : ""}
 
 ## Your Task
 You are a sales research analyst. Deep research this specific company and enrich the prospect data. Use web search to find:
@@ -175,6 +211,40 @@ export async function buildSignalScanContext(prospectIndex: number): Promise<str
   const prospect = prospects[prospectIndex];
   if (!prospect) throw new Error(`Prospect at index ${prospectIndex} not found`);
 
+  // Enrich with Apollo data if domain is available
+  let apolloContext = "";
+  if (prospect.website) {
+    try {
+      const domain = prospect.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/.*$/, "");
+      const enrichment = await enrichProspectWithApollo(domain, prospect.company);
+      apolloContext = formatApolloContext(enrichment);
+
+      // Persist Apollo data onto the prospect record
+      if (enrichment.organization) {
+        const org = enrichment.organization;
+        const key = getProspectsKey();
+        const allProspects = await readJSON<Record<string, unknown>[]>(key);
+        if (prospectIndex >= 0 && prospectIndex < allProspects.length) {
+          const techs = org.technology_names || org.technologies || [];
+          if (techs.length > 0) {
+            allProspects[prospectIndex].tech_stack = techs;
+          }
+          allProspects[prospectIndex].apollo_enrichment = {
+            estimated_num_employees: org.estimated_num_employees,
+            annual_revenue_printed: org.annual_revenue_printed,
+            technologies: techs,
+            linkedin_url: org.linkedin_url,
+            phone: org.phone,
+            enrichedAt: new Date().toISOString(),
+          };
+          await writeJSON(key, allProspects);
+        }
+      }
+    } catch {
+      // Apollo enrichment is optional — continue without it
+    }
+  }
+
   const existingSignals = prospect.signals || [];
   const existingSignalsStr = existingSignals.length > 0
     ? `\n## Existing Signals (avoid duplicates)\n${JSON.stringify(existingSignals, null, 2)}`
@@ -198,6 +268,7 @@ ${JSON.stringify({
   contacts: prospect.contacts,
   pain_signals: prospect.pain_signals,
 }, null, 2)}
+${apolloContext ? `\n${apolloContext}\n\nThe Apollo data above is VERIFIED — use it to supplement your web search. Tech stack data is especially valuable for identifying pain signals and technology gaps.` : ""}
 ${existingSignalsStr}
 
 ## Your Task

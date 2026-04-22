@@ -93,6 +93,17 @@ export interface Prospect {
   signal_synthesis?: SignalSynthesis;
   score_history?: ScoreChange[];
   last_signal_scan?: string;
+  tech_stack?: string[];
+  apollo_enrichment?: {
+    estimated_num_employees?: number;
+    annual_revenue_printed?: string;
+    technologies?: string[];
+    departmental_head_count?: Record<string, number>;
+    linkedin_url?: string;
+    phone?: string;
+    short_description?: string;
+    enrichedAt?: string;
+  };
   score: "HOT" | "WARM" | "COLD";
   score_reasoning: string;
   status: "new" | "researched" | "contacted" | "replied" | "meeting" | "disqualified";
