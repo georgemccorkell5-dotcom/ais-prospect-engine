@@ -20,7 +20,7 @@ export async function streamChat(
 ): Promise<void> {
   try {
     const tools = options?.webSearch
-      ? [{ type: "web_search_20250305" as const, name: "web_search" as const, max_uses: 5 }]
+      ? [{ type: "web_search_20250305" as const, name: "web_search" as const, max_uses: 10 }]
       : undefined;
 
     const stream = await client.messages.stream({

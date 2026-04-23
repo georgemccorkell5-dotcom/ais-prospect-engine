@@ -390,14 +390,22 @@ The user is looking for: "${query}"
 Find up to ${count} NEW companies (not in the blocklist) that match this search AND fit the ICP criteria above.
 
 ## Instructions
+**Your PRIMARY JOB is to return real, matching companies. Contact enrichment is a SEPARATE flow that runs later — do not block on it here.**
+
 1. Search the web for companies matching the user's request
-2. For EACH company found, search for:
-   - Basic company info (size, revenue, HQ, what they sell)
-   - At least 1-2 decision-maker contacts with titles
-   - For EVERY contact, search for their LinkedIn profile URL (search "[Name] [Company] site:linkedin.com/in"). This is critical.
-   - Pain signals relevant to our product
+2. For EACH company found, gather what you can within your search budget:
+   - Basic company info (size, revenue, HQ, what they sell) — required if discoverable
+   - 1-2 decision-maker names and titles — nice-to-have, NOT required
+   - LinkedIn URLs for those contacts — nice-to-have, NOT required
+   - Pain signals relevant to our product — include any obvious ones
 3. Score each as HOT/WARM/COLD based on the ICP qualifying criteria
 4. Do NOT include companies already in the pipeline
+
+**CRITICAL RULE — DO NOT DROP COMPANIES FOR MISSING DATA:**
+- If you find a real, matching company but can't find contacts within your search budget: return it anyway with `contacts: []`.
+- If you find contacts but no LinkedIn URLs: return them with `"linkedin": ""`.
+- NEVER return an empty prospects array just because contact data is incomplete. The user can enrich contacts later via a separate tool.
+- The worst possible outcome is returning zero prospects when real matching companies exist. Return what you found.
 
 ## Output Format
 Return ONLY a valid JSON object (no markdown fences, no explanation):
@@ -439,8 +447,8 @@ IMPORTANT:
 - Find up to ${count} NEW companies. Returning fewer is acceptable if you cannot find ${count} unique, non-duplicate matches. NEVER pad results with duplicates.
 - Do NOT fabricate companies. Every company must be real and verifiable.
 - ZERO DUPLICATES. Every company you return MUST be checked against the blocklist. This is your highest priority constraint.
-- LinkedIn URLs must be real — search for them, don't guess
-- If you can't find a LinkedIn URL after searching, use empty string "" — NEVER "Unknown"
+- If you identified real matching companies by name but could not fully enrich them with contacts/LinkedIn within your search budget: **STILL RETURN THEM** with `contacts: []` and whatever data you have. Do NOT drop companies for missing contact data.
+- LinkedIn URLs must be real if provided — never guess. Empty string "" is always acceptable.
 - Use the ICP as a guide but DO NOT be overly strict. If the user's search query describes a type of company, find companies matching THEIR description and score them against the ICP. A COLD score is fine — let the user decide what to pursue.
 - If you cannot find any NEW companies that aren't duplicates, return an empty prospects array with a search_summary explaining why. This is better than returning duplicates.
 - You MUST return valid JSON. Do NOT include any conversational text, explanations, or questions before or after the JSON. ONLY the JSON object.`;
