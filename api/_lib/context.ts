@@ -373,6 +373,18 @@ export async function buildProspectSearchContext(query: string, count: number): 
   return `# Prospect Discovery Search
 Today is ${new Date().toISOString().split("T")[0]}.
 
+## RESPONSE FORMAT — READ THIS FIRST, IT OVERRIDES EVERYTHING ELSE
+Your ENTIRE response must be a SINGLE valid JSON object matching the schema at the bottom of this prompt.
+- START your response with the character "{"
+- END your response with the character "}"
+- NO markdown headers (no "###", no "**bold**", no "---" separators)
+- NO narrative text or bullet-point lists outside the JSON
+- NO "Here are the prospects:" preamble
+- NO summary/recommendation paragraph after the JSON
+- If you are tempted to write a heading like "## SUMMARY" — STOP. Put that text inside the JSON "search_summary" field instead.
+
+If you literally cannot find any matching companies: return {"prospects":[],"search_summary":"explanation of why"}.
+
 ## Active Product Config (ICP & Qualifiers)
 ${trimmedConfig || activeConfig}
 
@@ -451,5 +463,7 @@ IMPORTANT:
 - LinkedIn URLs must be real if provided — never guess. Empty string "" is always acceptable.
 - Use the ICP as a guide but DO NOT be overly strict. If the user's search query describes a type of company, find companies matching THEIR description and score them against the ICP. A COLD score is fine — let the user decide what to pursue.
 - If you cannot find any NEW companies that aren't duplicates, return an empty prospects array with a search_summary explaining why. This is better than returning duplicates.
-- You MUST return valid JSON. Do NOT include any conversational text, explanations, or questions before or after the JSON. ONLY the JSON object.`;
+
+## FINAL REMINDER — DO NOT IGNORE
+Your entire response is ONE JSON object. No markdown. No "###" headers. No bullet lists. No preamble. No conclusion paragraph. Start with "{" and end with "}". If you want to summarize your findings, put that text in the "search_summary" field inside the JSON — not outside of it.`;
 }

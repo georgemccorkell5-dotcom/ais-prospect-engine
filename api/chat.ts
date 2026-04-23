@@ -242,5 +242,5 @@ async function handleProspectSearch(req: VercelRequest, res: VercelResponse) {
         sendSSE(res, "error", msg.includes("rate_limit") ? "Rate limit hit. Wait a minute and try again." : msg);
         sendSSE(res, "done", ""); res.end();
       },
-    }, { webSearch: true, model: "claude-haiku-4-5-20251001" });
+    }, { webSearch: true, model: "claude-sonnet-4-6" });
 }
