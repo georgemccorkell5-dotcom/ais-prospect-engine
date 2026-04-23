@@ -1,22 +1,39 @@
 # CONFIG: AIS MN
 ## Status: Research & Prospecting
-## Last Updated: 2026-04-13
+## Last Updated: 2026-04-23
 
 ---
 
 ## PRODUCT
 - **Name:** AIS | Advanced Imaging Solutions
+- **National IT arm:** All Covered — AIS's integrated national IT & cybersecurity services brand
 - **Website:** ais-mn.com
-- **One-liner:** AIS provides managed IT services, cybersecurity (MSSP), and technology solutions to small and mid-sized organizations across the Twin Cities and Minnesota.
-- **What AIS Does:**
-  - Managed IT Services (MSP) — proactive monitoring, helpdesk, infrastructure management
-  - Managed Security Services (MSSP) — SOC, MDR, SIEM, vulnerability management, pentesting
-  - Cybersecurity — ransomware protection, email security, endpoint protection, DLP
-  - Compliance support — HIPAA, CMMC, NIST, ISO, SEC, FINRA, GLBA, cyber insurance
-  - AI implementation — secure deployment, licensing guidance, governance
-  - vCISO services — policy guidance, vendor risk management, audit preparation
-  - Industrial automation and control systems integration
-- **Key differentiator:** Full-service IT partner combining MSP + MSSP under one roof. Nationally backed security operations with local Twin Cities presence and dedicated vertical helpdesk teams. Not just break-fix — proactive monitoring, regular testing, and clear communication.
+- **One-liner:** AIS provides managed IT, cybersecurity, cloud, technology projects, and printer/copier services to small and mid-sized organizations across the Twin Cities and Minnesota — backed by All Covered's national IT infrastructure.
+
+### Service Portfolio (Five Pillars)
+
+**1. Managed IT Services (MSP)**
+Help Desk, IT Infrastructure, IT Strategy & Consulting, Server & Desktop Management, Mobile Device Management, IT Hardware / Licensing & Services, Unified Communications, Local On-Site Response, 24x7 Coverage.
+
+**2. Cybersecurity Services (MSSP)**
+24x7x365 Monitoring & Remediation, Managed SIEM & EDR, Managed Security Awareness Training, Managed Vulnerability Scanning, Security Compliance Services (HIPAA, CMMC, NIST, ISO, SEC, FINRA, GLBA, cyber insurance), Email Filtering & Protection, Penetration Testing & Red Teaming, vCISO Services.
+
+**3. Cloud Services**
+Fully Managed Cloud, Hybrid Environment Support, Private Cloud & Microsoft Azure, Cloud Backup & Business Continuity, Data Accessibility, Cloud Planning & Migration Assistance, Microsoft 365 Licensing & Configuration Support.
+
+**4. IT Projects**
+Project Consulting, Application Development (website, custom apps), AI Implementation & Governance, CRM Customization & Support (Dynamics, HubSpot, Salesforce), Discounted Hardware & Software (Laptops, iPads, Monitors), Video Security Solutions, Device Management.
+
+**5. Printer / Copier Services** (AIS's original business line)
+Workgroup / Multifunctional Printers, Production Digital Presses, Wide Format Printers, Desktop Printer Solutions, Managed Print Services, Local On-Site Support.
+
+### Key Differentiators
+- **Local presence, national scale:** Twin Cities local team backed by All Covered — 500+ industry-certified engineers, 2 dedicated 24x7 SOCs, 4,300+ managed clients, 150K+ desktops supported, 15K+ managed servers, 750 dedicated IT & cybersecurity employees, SOC II Type II compliant, proprietary high-availability cloud (VA, IL, AZ).
+- **Full portfolio under one roof:** MSP + MSSP + Cloud + Projects + Print. Not just IT support OR security OR print — all of it, one accountable partner.
+- **Top-tier technology partnerships:** SentinelOne, Microsoft Solutions Partner, Microsoft Defender, Microsoft Sentinel, Fortinet, Tenable, KnowBe4, Google SecOps, Proofpoint, Cisco, Lenovo, Konica Minolta, Sharp, HP, Apple Authorised Reseller, Dell.
+- **Dedicated vertical helpdesk teams:** financial, healthcare, education, legal — industry-specific compliance and workflow expertise.
+- **Proactive, not reactive:** regular testing, continuous monitoring, clear communication — not just break-fix.
+
 - **Current status:** Prospecting top Twin Cities metro targets across key verticals
 - **Director of Sales:** Matt Keating (IT & Cybersecurity Services) — mattkeating@ais-mn.com, 952-516-7715
 - **Email templates:** `playbooks/jack-gray-templates.md` (original templates from Jack Gray, Sr. AE)
@@ -67,16 +84,27 @@
 - IT Leader (CIO, CISO, IT Director, IT Manager)
 
 ### Pain Signals to Look For
+
+**Core (MSP / MSSP / compliance — primary targeting signals):**
 - No dedicated IT department or very small IT team
 - Family-owned business (relationship-driven, loyal once trust is built)
 - Multiple locations (complexity without scale)
 - Reactive IT support — only hear from provider when something breaks
-- Compliance/regulatory pressure (HIPAA, CMMC, SEC, FINRA, GLBA)
+- Compliance / regulatory pressure (HIPAA, CMMC, SEC, FINRA, GLBA)
 - Cyber insurance requirements tightening
 - Recent growth or expansion
 - Job postings for IT, security, or operations roles (signal they need help)
 - Audit failures or remediation in progress
 - Email compromise incidents or ransomware concerns
+
+**Adjacent (other service lines — use as cross-sell openers or foot-in-the-door):**
+- Aging printer/copier fleet, uncontrolled print costs, or Konica/Sharp/HP brand visible in office photos (Print Services)
+- M365 / Copilot / Azure rollout in job postings or blog posts (Cloud Services)
+- New or legacy CRM chatter — Salesforce, HubSpot, Dynamics — with no visible admin (IT Projects: CRM Customization)
+- Hiring for "AI," "GenAI," or "Director of AI" without corresponding security/governance roles (IT Projects: AI Implementation & Governance)
+- Website or internal-tool rebuild mentions (IT Projects: Application Development)
+- Physical security / camera upgrade projects in facility news (IT Projects: Video Security)
+- Hardware refresh cycles — public RFPs, Glassdoor mentions of old laptops, 5+ year-old device fleets (IT Projects: Discounted Hardware)
 
 ### Disqualifiers
 - Already has large in-house IT/security team (50+ IT staff)
@@ -106,10 +134,13 @@ You're probably wearing five hats — managing infrastructure, fielding tickets,
 
 ### Proof Points
 - Based in the Twin Cities — local presence, local accountability
-- Nationally backed MSSP — enterprise-grade security for mid-market budgets
+- National IT infrastructure via All Covered: 500+ certified engineers, 2 dedicated 24x7 SOCs, 4,300+ managed clients, 150K+ desktops, 15K+ managed servers, 750 dedicated IT & cybersecurity employees
+- SOC II Type II compliant, proprietary high-availability cloud (VA, IL, AZ data centers)
+- Top-tier partners: SentinelOne, Microsoft Solutions Partner, Fortinet, Tenable, KnowBe4, Proofpoint, Cisco — enterprise-grade tooling, mid-market delivery
 - Dedicated vertical helpdesk teams (financial, education, legal, healthcare)
 - Proactive monitoring, regular testing, clear communication — not just break-fix
 - Help clients pass audits, meet compliance, and satisfy cyber insurance requirements
+- Full-portfolio partner: MSP + MSSP + Cloud + IT Projects + Print — reduces vendor sprawl
 
 ### What NOT to Say
 - Don't lead with acronyms (SIEM, SOC, MDR) — lead with business outcomes
@@ -134,11 +165,13 @@ You're probably wearing five hats — managing infrastructure, fielding tickets,
 - Doing nothing and hoping insurance covers it
 
 ### Our Angle
-- Local Twin Cities presence + nationally backed security operations
-- Combined MSP + MSSP under one roof — not just IT support OR just security
+- Local Twin Cities presence + All Covered's national IT & security operations
+- Five-pillar portfolio under one roof — MSP, MSSP, Cloud, IT Projects, Print — reduces vendor sprawl
 - Dedicated vertical helpdesk teams who understand industry-specific compliance
 - Right-sized for mid-market — enterprise capability without enterprise pricing
+- SOC II Type II + proprietary cloud + top-tier partner ecosystem — trust signals most local MSPs can't match
 - Proactive, not reactive — regular testing, continuous monitoring, clear communication
+- Print fleet or hardware purchase = natural "foot in the door" before broader MSP/MSSP conversation
 
 ---
 
@@ -159,6 +192,9 @@ You're probably wearing five hats — managing infrastructure, fielding tickets,
 - Recent security incident, email compromise, or ransomware scare
 - Job postings for IT/security roles (signal they need help)
 - Recent growth, new facility, or acquisition
+- Active cloud / M365 / Azure migration chatter (cloud foothold opportunity)
+- Visible CRM or custom-app project gaps (IT Projects foothold)
+- Print fleet age or brand visible (Print Services foothold — low-friction first engagement)
 
 ### Deal Breakers
 - Has large in-house IT/security team (50+ IT staff)
