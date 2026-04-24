@@ -145,7 +145,7 @@ export default function Outreach() {
                   <span className="ml-auto text-[10px] text-blue-400 font-normal normal-case tracking-normal">targeting selected</span>
                 )}
               </div>
-              {prospect.contacts.map((c, i) => {
+              {(prospect.contacts || []).map((c, i) => {
                 const isSelected = selectedContact === i;
                 const contactEnriched = enrichResult && selectedContact === i;
                 const rawLinkedin = (contactEnriched && enrichResult?.linkedin) || c.linkedin;
@@ -229,7 +229,7 @@ export default function Outreach() {
               <div className="flex items-center gap-2 text-xs text-gray-500 mb-2 uppercase tracking-wider font-medium">
                 <span>⚡</span> Pain Signals
               </div>
-              {prospect.pain_signals.map((s, i) => (
+              {(prospect.pain_signals || []).map((s, i) => (
                 <div key={i} className="text-sm text-gray-400 mb-1.5 last:mb-0 leading-relaxed">• {s}</div>
               ))}
             </div>

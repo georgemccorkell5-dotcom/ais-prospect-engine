@@ -7,8 +7,8 @@ import ProspectCard from "../components/ProspectCard";
 import FilterBar from "../components/FilterBar";
 import { recentSignalCount } from "../lib/signals";
 
-function getVertical(industry: string): string {
-  // Split on " - " or " — " (em dash) to get broad vertical
+function getVertical(industry: string | null | undefined): string {
+  if (!industry || typeof industry !== "string") return "";
   const match = industry.match(/^(.+?)(?:\s[—\-]\s)/);
   return match ? match[1] : industry;
 }
@@ -79,7 +79,7 @@ export default function Dashboard() {
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
     return prospects.filter((p) => {
-      if (q && !p.company.toLowerCase().includes(q)) return false;
+      if (q && !(p.company || "").toLowerCase().includes(q)) return false;
       if (activeVertical && getVertical(p.industry) !== activeVertical) return false;
       if (activeScores.size > 0 && !activeScores.has(p.score)) return false;
       if (showNewSignals && !(p.signals && recentSignalCount(p.signals, 14) > 0)) return false;

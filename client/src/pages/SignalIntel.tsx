@@ -117,12 +117,15 @@ export default function SignalIntel() {
   const companyIndexMap = useMemo(() => {
     const map = new Map<string, number>();
     prospects.forEach((p, i) => {
-      map.set(p.company.toLowerCase(), i);
+      if (p.company && typeof p.company === "string") {
+        map.set(p.company.toLowerCase(), i);
+      }
     });
     return map;
   }, [prospects]);
 
-  const getProspectIndex = (company: string): number | null => {
+  const getProspectIndex = (company: string | null | undefined): number | null => {
+    if (!company || typeof company !== "string") return null;
     return companyIndexMap.get(company.toLowerCase()) ?? null;
   };
 
