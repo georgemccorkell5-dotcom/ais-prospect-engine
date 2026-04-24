@@ -465,5 +465,18 @@ IMPORTANT:
 - If you cannot find any NEW companies that aren't duplicates, return an empty prospects array with a search_summary explaining why. This is better than returning duplicates.
 
 ## FINAL REMINDER — DO NOT IGNORE
-Your entire response is ONE JSON object. No markdown. No "###" headers. No bullet lists. No preamble. No conclusion paragraph. Start with "{" and end with "}". If you want to summarize your findings, put that text in the "search_summary" field inside the JSON — not outside of it.`;
+Your entire response is ONE JSON object. No markdown. No "###" headers. No bullet lists. No preamble. No conclusion paragraph. Start with "{" and end with "}". If you want to summarize your findings, put that text in the "search_summary" field inside the JSON — not outside of it.
+
+## FIELD NAMES ARE EXACT — DO NOT RENAME
+Use these field names verbatim. Do NOT substitute "prettier" alternatives:
+- Use "company" — NOT "company_name", "name", or "firm"
+- Use "score" — NOT "icp_score", "rating", or "fit"
+- Use "industry" — NOT "vertical" or "sector"
+- Use "size" — NOT "employee_count" or "headcount"
+- Use "revenue" — NOT "revenue_estimate" or "annual_revenue"
+- Use "hq" — NOT "hq_location", "headquarters", or "location"
+- Use "contacts" — NOT "decision_makers" or "people"
+- Inside contacts, use "linkedin" — NOT "linkedin_url" or "linkedin_profile"
+- Use "search_summary" — NOT "summary" or "overview"
+Any field-name deviation will cause the UI to drop the field silently. Match the schema exactly.`;
 }

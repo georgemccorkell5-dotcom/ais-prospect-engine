@@ -212,6 +212,41 @@ async function handleResearch(req: VercelRequest, res: VercelResponse) {
   }, { webSearch: true });
 }
 
+function normalizeProspect(p: Record<string, unknown>): Record<string, unknown> {
+  const pick = (...keys: string[]): unknown => {
+    for (const k of keys) if (p[k] !== undefined && p[k] !== null && p[k] !== "") return p[k];
+    return undefined;
+  };
+  const rawContacts = (pick("contacts", "decision_makers", "people") as Array<Record<string, unknown>> | undefined) || [];
+  const contacts = rawContacts.map((c) => ({
+    name: (c.name ?? c.full_name ?? "") as string,
+    title: (c.title ?? c.role ?? "") as string,
+    linkedin: (c.linkedin ?? c.linkedin_url ?? c.linkedin_profile ?? "") as string,
+    email: (c.email ?? c.email_address ?? "") as string,
+  }));
+  const today = new Date().toISOString().split("T")[0];
+  return {
+    company: pick("company", "company_name", "name", "firm") || "",
+    website: pick("website", "url", "domain") || "",
+    industry: pick("industry", "vertical", "sector") || "",
+    what_they_sell: pick("what_they_sell", "description", "business_description") || "",
+    hq: pick("hq", "hq_location", "headquarters", "location") || "",
+    size: pick("size", "employee_count", "headcount", "employees") || "",
+    revenue: pick("revenue", "revenue_estimate", "annual_revenue") || "",
+    crm: pick("crm") || "Unknown",
+    contacts,
+    pain_signals: (pick("pain_signals", "pain_points", "signals") as string[]) || [],
+    score: (pick("score", "icp_score", "rating", "fit") as string) || "COLD",
+    score_reasoning: (pick("score_reasoning", "reasoning", "score_rationale") as string) || "",
+    status: "new" as const,
+    last_action: "Discovered via prospect search",
+    next_action: "Review and qualify",
+    next_action_date: today,
+    product_config: "ais-mn",
+    notes: (pick("notes", "note") as string) || "",
+  };
+}
+
 async function handleProspectSearch(req: VercelRequest, res: VercelResponse) {
   const { query, count = 5 } = req.body;
   if (!query || typeof query !== "string" || query.trim().length < 5) {
@@ -232,7 +267,10 @@ async function handleProspectSearch(req: VercelRequest, res: VercelResponse) {
         if (hadError) return;
         try {
           const result = JSON.parse(extractJSON(fullText));
-          sendSSE(res, "results", { prospects: result.prospects || [], summary: result.search_summary || "" });
+          const rawProspects = (result.prospects || []) as Array<Record<string, unknown>>;
+          const prospects = rawProspects.map(normalizeProspect).filter((p) => p.company);
+          const summary = (result.search_summary ?? result.summary ?? result.overview ?? "") as string;
+          sendSSE(res, "results", { prospects, summary });
         } catch { sendSSE(res, "error", "Could not parse search results. Try a more specific query."); }
         sendSSE(res, "done", ""); res.end();
       },
