@@ -5,11 +5,13 @@ import { useProspects } from "../hooks/useProspects";
 import type { Prospect } from "../lib/types";
 import ScoreBadge from "../components/ScoreBadge";
 
-function normalize(s: string): string {
+function normalize(s: string | null | undefined): string {
+  if (!s || typeof s !== "string") return "";
   return s.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
-function extractDomain(url: string): string {
+function extractDomain(url: string | null | undefined): string {
+  if (!url || typeof url !== "string") return "";
   try {
     return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace(/^www\./, "");
   } catch {
@@ -19,13 +21,11 @@ function extractDomain(url: string): string {
 
 function isDuplicate(prospect: Prospect, pipelineNames: Set<string>, pipelineDomains: Set<string>): boolean {
   const name = normalize(prospect.company);
-  // Exact name match
+  if (!name) return false;
   if (pipelineNames.has(name)) return true;
-  // Check if pipeline name contains this name or vice versa (catches "ServiceTitan" vs "ServiceTitan Inc.")
   for (const pn of pipelineNames) {
     if (pn.length > 3 && name.length > 3 && (pn.includes(name) || name.includes(pn))) return true;
   }
-  // Domain match
   if (prospect.website) {
     const domain = extractDomain(prospect.website);
     if (domain && pipelineDomains.has(domain)) return true;
@@ -42,9 +42,18 @@ const COUNT_OPTIONS = [
 function loadSession() {
   try {
     const raw = sessionStorage.getItem("findProspects");
-    if (raw) return JSON.parse(raw) as { query: string; results: Prospect[]; summary: string; added: number[] };
-  } catch { /* ignore */ }
-  return null;
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { query: string; results: Prospect[]; summary: string; added: number[] };
+    // Defend against corrupt cached results — drop anything missing a company
+    if (Array.isArray(parsed.results)) {
+      parsed.results = parsed.results.filter((p) => p && typeof p.company === "string" && p.company.length > 0);
+    }
+    return parsed;
+  } catch {
+    // If parsing fails, clear the bad cache so the page can load
+    try { sessionStorage.removeItem("findProspects"); } catch { /* ignore */ }
+    return null;
+  }
 }
 
 function saveSession(query: string, results: Prospect[], summary: string, added: Set<number>) {
