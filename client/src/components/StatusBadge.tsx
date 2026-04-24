@@ -7,10 +7,11 @@ const colors: Record<string, string> = {
   disqualified: "bg-gray-700/20 text-gray-500 border-gray-600/30",
 };
 
-export default function StatusBadge({ status }: { status: string }) {
+export default function StatusBadge({ status }: { status: string | null | undefined }) {
+  const s = status && typeof status === "string" ? status : "new";
   return (
-    <span className={`inline-flex px-2 py-0.5 text-xs rounded-full border ${colors[status] || colors.new}`}>
-      {status.charAt(0).toUpperCase() + status.slice(1)}
+    <span className={`inline-flex px-2 py-0.5 text-xs rounded-full border ${colors[s] || colors.new}`}>
+      {s.charAt(0).toUpperCase() + s.slice(1)}
     </span>
   );
 }

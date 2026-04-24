@@ -16,7 +16,8 @@ const statusColors: Record<string, { text: string; bg: string; border: string; d
   disqualified: { text: "text-gray-500",   bg: "bg-gray-700/10",   border: "border-gray-600/40",   dot: "bg-gray-500" },
 };
 
-function capitalize(s: string) {
+function capitalize(s: string | null | undefined): string {
+  if (!s || typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
